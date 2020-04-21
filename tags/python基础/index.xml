@@ -13,10 +13,10 @@
     
     <item>
       <title>python内置的内存管理机制</title>
-      <link>/hugo_blog/2020/02/python%E5%86%85%E7%BD%AE%E7%9A%84%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%E6%9C%BA%E5%88%B6/</link>
+      <link>/hugo_blog/post/post_1/</link>
       <pubDate>Sun, 23 Feb 2020 00:00:00 +0000</pubDate>
       
-      <guid>/hugo_blog/2020/02/python%E5%86%85%E7%BD%AE%E7%9A%84%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%E6%9C%BA%E5%88%B6/</guid>
+      <guid>/hugo_blog/post/post_1/</guid>
       <description>在Python中是如何管理内存的 Python有一个私有堆空间来保存所有的对象和数据结构。作为开发者，我们无法访问它，是解释器在管理它。但是有了核心API后，我们可以访问一些工具。Python内存管理器控制内存分配。
 另外，内置垃圾回收器会回收使用所有的未使用内存，所以使其适用于堆空间。
 一、垃圾回收：python不像C++，Java等语言一样，他们可以不用事先声明变量类型而直接对变量进行赋值。对Python语言来讲，对象的类型和内存都是在运行时确定的。这也是为什么我们称Python语言为动态类型的原因(这里我们把动态类型可以简单的归结为对变量内存地址的分配是在运行时自动判断变量类型并对变量进行赋值)。
@@ -37,10 +37,10 @@ num1 = 2 num2 = 2 print(id(num1), id(num2))
     
     <item>
       <title>python的数据结构</title>
-      <link>/hugo_blog/1/01/python%E7%9A%84%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</link>
+      <link>/hugo_blog/post/post_2/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo_blog/1/01/python%E7%9A%84%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</guid>
+      <guid>/hugo_blog/post/post_2/</guid>
       <description>关于数据结构 什么是数据结构？
 简单地说，数据结构是以某种特定的布局方式存储数据的容器。这种“布局方式”决定了数据结构对于某些操作是高效的，而对于其他操作则是低效的。首先我们需要理解各种数据结构，才能在处理实际问题时选取最合适的数据结构。
 为什么我们需要数据结构？
