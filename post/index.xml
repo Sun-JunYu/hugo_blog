@@ -13,10 +13,10 @@
     
     <item>
       <title>三方登录</title>
-      <link>/hugo_blog/2020/03/</link>
+      <link>/hugo_blog/2020/03/%E4%B8%89%E6%96%B9%E7%99%BB%E5%BD%95/</link>
       <pubDate>Thu, 05 Mar 2020 00:00:00 +0000</pubDate>
       
-      <guid>/hugo_blog/2020/03/</guid>
+      <guid>/hugo_blog/2020/03/%E4%B8%89%E6%96%B9%E7%99%BB%E5%BD%95/</guid>
       <description>第三方登陆 1.微博登陆  vue向接口发送请求  Code
 &#39;https://api.weibo.com/oauth2/authorize?client_id=297351690&amp;amp;redirect_uri=http://127.0.0.1:8000/weibo_callback&#39;  微博回调接口  Python
 # 新浪微博回调 def wb_back(request): # 获取code code = request.GET.get(&#39;code&#39;) # 定义微博认证地址 data = { &#39;client_id&#39;: &#39;297351690&#39;, &#39;client_secret&#39;: &#39;8e24e86fd5dfa8d95675316bd969f9f1&#39;, &#39;grant_type&#39;: &#39;authorization_code&#39;, &#39;code&#39;: code, &#39;redirect_uri&#39;: &#39;http://127.0.0.1:8000/weibo_callback&#39; } url = &#39;https://api.weibo.com/oauth2/access_token&#39; res = requests.post(url, data=data).text res = json.loads(res) # return HttpResponse(res[&#39;uid&#39;]) # 获取新浪微博用户名 result = requests.get(url=&#39;https://api.weibo.com/2/users/show.json&#39;, params={&#39;access_token&#39;: res[&#39;access_token&#39;], &#39;uid&#39;: res[&#39;uid&#39;]}) result = json.loads(result.text) # print(result) # 判断该用户曾经是否登陆过 user = User.objects.filter(username=str(result[&#39;name&#39;])).first() sina_id = &#39;&#39; user_id = &#39;&#39; if user: sina_id = user.</description>
@@ -24,10 +24,10 @@
     
     <item>
       <title>python内置的内存管理机制</title>
-      <link>/hugo_blog/2020/02/</link>
+      <link>/hugo_blog/2020/02/python%E5%86%85%E7%BD%AE%E7%9A%84%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%E6%9C%BA%E5%88%B6/</link>
       <pubDate>Sun, 23 Feb 2020 00:00:00 +0000</pubDate>
       
-      <guid>/hugo_blog/2020/02/</guid>
+      <guid>/hugo_blog/2020/02/python%E5%86%85%E7%BD%AE%E7%9A%84%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%E6%9C%BA%E5%88%B6/</guid>
       <description>在Python中是如何管理内存的 Python有一个私有堆空间来保存所有的对象和数据结构。作为开发者，我们无法访问它，是解释器在管理它。但是有了核心API后，我们可以访问一些工具。Python内存管理器控制内存分配。
 另外，内置垃圾回收器会回收使用所有的未使用内存，所以使其适用于堆空间。
 一、垃圾回收：python不像C++，Java等语言一样，他们可以不用事先声明变量类型而直接对变量进行赋值。对Python语言来讲，对象的类型和内存都是在运行时确定的。这也是为什么我们称Python语言为动态类型的原因(这里我们把动态类型可以简单的归结为对变量内存地址的分配是在运行时自动判断变量类型并对变量进行赋值)。
@@ -48,10 +48,10 @@ num1 = 2 num2 = 2 print(id(num1), id(num2))
     
     <item>
       <title>如何使用python&#43;Vue.js&#43;Django上传文件到七牛云</title>
-      <link>/hugo_blog/2020/02/</link>
+      <link>/hugo_blog/2020/02/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8python-vue.js-django%E4%B8%8A%E4%BC%A0%E6%96%87%E4%BB%B6%E5%88%B0%E4%B8%83%E7%89%9B%E4%BA%91/</link>
       <pubDate>Sun, 23 Feb 2020 00:00:00 +0000</pubDate>
       
-      <guid>/hugo_blog/2020/02/</guid>
+      <guid>/hugo_blog/2020/02/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8python-vue.js-django%E4%B8%8A%E4%BC%A0%E6%96%87%E4%BB%B6%E5%88%B0%E4%B8%83%E7%89%9B%E4%BA%91/</guid>
       <description>使用python+Vue.js+Django异步前端通过api上传文件到七牛云 ​ 首先注册七牛云：qiniu.com，进入你的七牛云账号，打开秘钥页，记录下你的ak和sk
 ​ ​ 随后新建一个云存储空间，这里空间名字一定要记录一下：
 ​ ​ 此时我们用django写一个获取uptoken的接口，使用drf框架来写，注意别忘了安装七牛云扩展 pip install qiniu
@@ -67,10 +67,10 @@ get_token(){ this.axios.get(&#39;http://localhost:8000/uptoken/&#39;).then((resu
     
     <item>
       <title>欢迎来到孙军雨的技术博客</title>
-      <link>/hugo_blog/2020/02/</link>
+      <link>/hugo_blog/2020/02/who-is-using-tranquilpeak-hugo-theme/</link>
       <pubDate>Fri, 14 Feb 2020 00:00:00 +0000</pubDate>
       
-      <guid>/hugo_blog/2020/02/</guid>
+      <guid>/hugo_blog/2020/02/who-is-using-tranquilpeak-hugo-theme/</guid>
       <description>欢迎来到孙军雨的技术博客，本站用于记录本人的学习笔记、技术点梳理等。欢迎各位指导和纠错。
  
 联系我： QQ：2806287559
@@ -80,10 +80,10 @@ get_token(){ this.axios.get(&#39;http://localhost:8000/uptoken/&#39;).then((resu
     
     <item>
       <title>python的数据结构</title>
-      <link>/hugo_blog/1/01/</link>
+      <link>/hugo_blog/1/01/python%E7%9A%84%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo_blog/1/01/</guid>
+      <guid>/hugo_blog/1/01/python%E7%9A%84%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</guid>
       <description>关于数据结构 什么是数据结构？
 简单地说，数据结构是以某种特定的布局方式存储数据的容器。这种“布局方式”决定了数据结构对于某些操作是高效的，而对于其他操作则是低效的。首先我们需要理解各种数据结构，才能在处理实际问题时选取最合适的数据结构。
 为什么我们需要数据结构？
