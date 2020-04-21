@@ -13,10 +13,10 @@
 
 <meta property="og:description" content="Hugo tranquilpeak theme demo">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Posts">
-<meta name="twitter:title" content="Posts">
-<meta property="og:url" content="/hugo_blog/post/">
-<meta property="twitter:url" content="/hugo_blog/post/">
+<meta property="og:title" content="vue">
+<meta name="twitter:title" content="vue">
+<meta property="og:url" content="/hugo_blog/tags/vue/">
+<meta property="twitter:url" content="/hugo_blog/tags/vue/">
 <meta property="og:site_name" content="孙军雨的技术博客">
 <meta property="og:description" content="Hugo tranquilpeak theme demo">
 <meta name="twitter:description" content="Hugo tranquilpeak theme demo">
@@ -39,16 +39,16 @@
   <meta property="twitter:image" content="http://q92ekyelb.bkt.clouddn.com/authon.jpg">
 
 
-    <title>Posts</title>
+    <title>vue</title>
 
     <link rel="icon" href="/hugo_blog/favicon.png">
     
-      <link rel="alternate" type="application/rss+xml" title="RSS" href="/hugo_blog/post/index.xml">
+      <link rel="alternate" type="application/rss+xml" title="RSS" href="/hugo_blog/tags/vue/index.xml">
     
 
     
 
-    <link rel="canonical" href="/hugo_blog/hugo_blog/post/">
+    <link rel="canonical" href="/hugo_blog/hugo_blog/tags/vue/">
 
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
@@ -197,16 +197,18 @@
 </nav>
 
       
+        
 
+      
       <div id="main" data-behavior="1"
         class="
                hasCoverMetaIn
                ">
-        <section class="postShorten-group main-content-wrap">
-          
-          
-          
+        
+          <section class="postShorten-group main-content-wrap">
             
+            
+              
   
     
       
@@ -263,79 +265,8 @@
   
 </article>
 
-          
             
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="/hugo_blog/hugo_blog/2020/02/python%E5%86%85%E7%BD%AE%E7%9A%84%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%E6%9C%BA%E5%88%B6/">
-          python内置的内存管理机制
-        </a>
-      </h1>
-      
-  <div class="postShorten-meta post-meta">
-    
-      <time itemprop="datePublished" datetime="2020-02-23T00:00:00Z">
-        
-  February 23, 2020
-
-      </time>
-    
-    
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="/hugo_blog/categories/python">python</a>
-    
-  
-
-  </div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      
-        在Python中是如何管理内存的 Python有一个私有堆空间来保存所有的对象和数据结构。作为开发者，我们无法访问它，是解释器在管理它。但是有了核心API后，我们可以访问一些工具。Python内存管理器控制内存分配。
-另外，内置垃圾回收器会回收使用所有的未使用内存，所以使其适用于堆空间。
-一、垃圾回收：python不像C++，Java等语言一样，他们可以不用事先声明变量类型而直接对变量进行赋值。对Python语言来讲，对象的类型和内存都是在运行时确定的。这也是为什么我们称Python语言为动态类型的原因(这里我们把动态类型可以简单的归结为对变量内存地址的分配是在运行时自动判断变量类型并对变量进行赋值)。
-二、引用计数：Python采用了类似Windows内核对象一样的方式来对内存进行管理。每一个对象，都维护这一个对指向该对对象的引用的计数。当变量被绑定在一个对象上的时候，该变量的引用计数就是1，(还有另外一些情况也会导致变量引用计数的增加),系统会自动维护这些标签，并定时扫描，当某标签的引用计数变为0的时候，该对就会被回收。
-1 对象存储
-在Python中万物皆对象
-不存在基本数据类型，0, 1.2, True, False, &ldquo;abc&quot;等，这些全都是对象
-所有对象, 都会在内存中开辟一块空间进行存储
-2.1 会根据不同的类型以及内容, 开辟不同的空间大小进行存储 2.2 返回该空间的地址给外界接收(称为&quot;引用&rdquo;), 用于后续对这个对象的操作 2.3 可通过 id() 函数获取内存地址(10进制) 2.4 通过 hex() 函数可以查看对应的16进制地址
-class Person: pass
-p = Person() print(p) print(id(p)) print(hex(id(p)))
-    打印结果
-    &lt;__main__.Person object at 0x107030470&gt; 4412605552 0x107030470 对于整数和短小的字符, Python会进行缓存; 不会创建多个相同对象
-此时, 被多次赋值, 只会有多份引用
-num1 = 2 num2 = 2 print(id(num1), id(num2))
-    打印结果
-      
-      <p>
-        <a href="/hugo_blog/hugo_blog/2020/02/python%E5%86%85%E7%BD%AE%E7%9A%84%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%E6%9C%BA%E5%88%B6/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-          
-            
+              
   
     
       
@@ -404,168 +335,11 @@ get_token(){ this.axios.get('http://localhost:8000/uptoken/').then((result) =&gt
   
 </article>
 
-          
             
-  
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-left" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="/hugo_blog/hugo_blog/2020/02/who-is-using-tranquilpeak-hugo-theme/">
-          欢迎来到孙军雨的技术博客
-        </a>
-      </h1>
-      
-  <div class="postShorten-meta post-meta">
-    
-      <time itemprop="datePublished" datetime="2020-02-14T00:00:00Z">
-        
-  February 14, 2020
-
-      </time>
-    
-    
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="/hugo_blog/categories/%e9%a6%96%e9%a1%b5">首页</a>
-    
-  
-
-  </div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      
-        欢迎来到孙军雨的技术博客，本站用于记录本人的学习笔记、技术点梳理等。欢迎各位指导和纠错。
- 
-联系我： QQ：2806287559
-​	微信：13466619275
-​	邮箱： sunjun_yu@163.com
-      
-      <p>
-        <a href="/hugo_blog/hugo_blog/2020/02/who-is-using-tranquilpeak-hugo-theme/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-    <a href="/hugo_blog/hugo_blog/2020/02/who-is-using-tranquilpeak-hugo-theme/">
-      <div class="postShorten-thumbnailimg">
-        <img alt="" itemprop="image" src="//d1u9biwaxjngwg.cloudfront.net/cover-image-showcase/city-750.jpg"/>
-      </div>
-    </a>
-  
-</article>
-
-          
             
-  
-    
-      
+
+          </section>
         
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="/hugo_blog/hugo_blog/1/01/python%E7%9A%84%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
-          python的数据结构
-        </a>
-      </h1>
-      
-  <div class="postShorten-meta post-meta">
-    
-      <time itemprop="datePublished" datetime="0001-01-01T00:00:00Z">
-        
-  January 1, 1
-
-      </time>
-    
-    
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="/hugo_blog/categories/python">python</a>
-    
-  
-
-  </div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      
-        关于数据结构 什么是数据结构？
-简单地说，数据结构是以某种特定的布局方式存储数据的容器。这种“布局方式”决定了数据结构对于某些操作是高效的，而对于其他操作则是低效的。首先我们需要理解各种数据结构，才能在处理实际问题时选取最合适的数据结构。
-为什么我们需要数据结构？
-数据是计算机科学当中最关键的实体，而数据结构则可以将数据以某种组织形式存储，因此，数据结构的价值不言而喻。
-无论你以何种方式解决何种问题，你都需要处理数据——无论是涉及员工薪水、股票价格、购物清单，还是只是简单的电话簿问题。
-数据需要根据不同的场景，按照特定的格式进行存储。有很多数据结构能够满足以不同格式存储数据的需求。
-常见的数据结构
-首先列出一些最常见的数据结构，我们将逐一说明：
-数组 栈 队列 链表 树 字典树（这是一种高效的树形结构，但值得单独说明） 散列表（哈希表）
-数组 数组是最简单、也是使用最广泛的数据结构。栈、队列等其他数据结构均由数组演变而来。下图是一个包含元素（1，2，3和4）的简单数组，数组长度为4。
-每个数据元素都关联一个正数值，我们称之为索引，它表明数组中每个元素所在的位置。大部分语言将初始索引定义为零。
-以下是数组的两种类型：
-一维数组（如上所示） 多维数组（数组的数组）
-数组的基本操作
-Insert——在指定索引位置插入一个元素 Get——返回指定索引位置的元素 Delete——删除指定索引位置的元素 Size——得到数组所有元素的数量
-面试中关于数组的常见问题
-寻找数组中第二小的元素 找到数组中第一个不重复出现的整数 合并两个有序数组 重新排列数组中的正值和负值
-栈 著名的撤销操作几乎遍布任意一个应用。但你有没有思考过它是如何工作的呢？这个问题的解决思路是按照将最后的状态排列在先的顺序，在内存中存储历史工作状态（当然，它会受限于一定的数量）。这没办法用数组实现。但有了栈，这就变得非常方便了。
-可以把栈想象成一列垂直堆放的书。为了拿到中间的书，你需要移除放置在这上面的所有书。这就是LIFO（后进先出）的工作原理。
-下图是包含三个数据元素（1，2和3）的栈，其中顶部的3将被最先移除：
-栈的基本操作
-Push——在顶部插入一个元素 Pop——返回并移除栈顶元素 isEmpty——如果栈为空，则返回true Top——返回顶部元素，但并不移除它
-面试中关于栈的常见问题
-使用栈计算后缀表达式 对栈的元素进行排序 判断表达式是否括号平衡
-应用场景：逆序输出，语法检查，进制转换
-在我们日常编程中，括号都是成对出现的，比如“()”“[]”“{}”“&lt;&gt;”这些成对出现的符号
-那么具体处理的方法就是:凡是遇到括号的前半部分，即把这个元素入栈，凡是遇到括号的后半部分就比对栈顶元素是否该元素相匹配，如果匹配，则前半部分出栈，否则就是匹配出错
-将十进制的数转换为2-9的任意进制的数
-我们都知道，通过求余法，可以将十进制数转换为其他进制，比如要转为八进制，将十进制数除以8，记录余数，然后继续将商除以8，一直到商等于0为止，最后将余数倒着写数来就可以了。
-比如100的八进制，100首先除以8商12余4,4首先进栈，然后12除以8商1余4，第二个余数4进栈，接着1除以8，商0余1，第三个余数1进栈，最后将三个余数出栈，就得到了100的八进制数144,
-队列 与栈相似，队列是另一种顺序存储元素的线性数据结构。栈与队列的最大差别在于栈是LIFO（后进先出），而队列是FIFO，即先进先出。
-一个完美的队列现实例子：售票亭排队队伍。如果有新人加入，他需要到队尾去排队，而非队首——排在前面的人会先拿到票，然后离开队伍。
-下图是包含四个元素（1，2，3和4）的队列，其中在顶部的1将被最先移除：
-移除先入队的元素、插入新元素
-队列的基本操作
-Enqueue()——在队列尾部插入元素 Dequeue()——移除队列头部的元素 isEmpty()——如果队列为空，则返回true Top()——返回队列的第一个元素
-面试中关于队列的常见问题
-使用队列表示栈 对队列的前k个元素倒序 使用队列生成从1到n的二进制数
-链表 链表是另一个重要的线性数据结构，乍一看可能有点像数组，但在内存分配、内部结构以及数据插入和删除的基本操作方面均有所不同。
-链表就像一个节点链，其中每个节点包含着数据和指向后续节点的指针。 链表还包含一个头指针，它指向链表的第一个元素，但当列表为空时，它指向null或无具体内容。
-链表一般用于实现文件系统、哈希表和邻接表。
-      
-      <p>
-        <a href="/hugo_blog/hugo_blog/1/01/python%E7%9A%84%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-          
-          
-
-        </section>
         <footer id="footer" class="main-content-wrap">
   <span class="copyrights">
     &copy; 2020 孙军雨的技术博客. All Rights Reserved

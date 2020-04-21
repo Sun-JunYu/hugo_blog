@@ -13,10 +13,10 @@
 
 <meta property="og:description" content="Hugo tranquilpeak theme demo">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Posts">
-<meta name="twitter:title" content="Posts">
-<meta property="og:url" content="/hugo_blog/post/">
-<meta property="twitter:url" content="/hugo_blog/post/">
+<meta property="og:title" content="python">
+<meta name="twitter:title" content="python">
+<meta property="og:url" content="/hugo_blog/categories/python/">
+<meta property="twitter:url" content="/hugo_blog/categories/python/">
 <meta property="og:site_name" content="孙军雨的技术博客">
 <meta property="og:description" content="Hugo tranquilpeak theme demo">
 <meta name="twitter:description" content="Hugo tranquilpeak theme demo">
@@ -39,16 +39,16 @@
   <meta property="twitter:image" content="http://q92ekyelb.bkt.clouddn.com/authon.jpg">
 
 
-    <title>Posts</title>
+    <title>python</title>
 
     <link rel="icon" href="/hugo_blog/favicon.png">
     
-      <link rel="alternate" type="application/rss+xml" title="RSS" href="/hugo_blog/post/index.xml">
+      <link rel="alternate" type="application/rss+xml" title="RSS" href="/hugo_blog/categories/python/index.xml">
     
 
     
 
-    <link rel="canonical" href="/hugo_blog/hugo_blog/post/">
+    <link rel="canonical" href="/hugo_blog/hugo_blog/categories/python/">
 
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
@@ -197,74 +197,18 @@
 </nav>
 
       
+        
 
+      
       <div id="main" data-behavior="1"
         class="
                hasCoverMetaIn
                ">
-        <section class="postShorten-group main-content-wrap">
-          
-          
-          
+        
+          <section class="postShorten-group main-content-wrap">
             
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="/hugo_blog/hugo_blog/2020/03/%E4%B8%89%E6%96%B9%E7%99%BB%E5%BD%95/">
-          三方登录
-        </a>
-      </h1>
-      
-  <div class="postShorten-meta post-meta">
-    
-      <time itemprop="datePublished" datetime="2020-03-05T00:00:00Z">
-        
-  March 5, 2020
-
-      </time>
-    
-    
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="/hugo_blog/categories/%e4%b8%89%e6%96%b9%e7%99%bb%e5%bd%95">三方登录</a>
-    
-  
-
-  </div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      
-        第三方登陆 1.微博登陆  vue向接口发送请求  Code
-'https://api.weibo.com/oauth2/authorize?client_id=297351690&amp;redirect_uri=http://127.0.0.1:8000/weibo_callback'  微博回调接口  Python
-# 新浪微博回调 def wb_back(request): # 获取code code = request.GET.get('code') # 定义微博认证地址 data = { 'client_id': '297351690', 'client_secret': '8e24e86fd5dfa8d95675316bd969f9f1', 'grant_type': 'authorization_code', 'code': code, 'redirect_uri': 'http://127.0.0.1:8000/weibo_callback' } url = 'https://api.weibo.com/oauth2/access_token' res = requests.post(url, data=data).text res = json.loads(res) # return HttpResponse(res['uid']) # 获取新浪微博用户名 result = requests.get(url='https://api.weibo.com/2/users/show.json', params={'access_token': res['access_token'], 'uid': res['uid']}) result = json.loads(result.text) # print(result) # 判断该用户曾经是否登陆过 user = User.objects.filter(username=str(result['name'])).first() sina_id = '' user_id = '' if user: sina_id = user.
-      
-      <p>
-        <a href="/hugo_blog/hugo_blog/2020/03/%E4%B8%89%E6%96%B9%E7%99%BB%E5%BD%95/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-          
             
+              
   
     
       
@@ -334,8 +278,8 @@ num1 = 2 num2 = 2 print(id(num1), id(num2))
   
 </article>
 
-          
             
+              
   
     
       
@@ -404,70 +348,8 @@ get_token(){ this.axios.get('http://localhost:8000/uptoken/').then((result) =&gt
   
 </article>
 
-          
             
-  
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-left" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="/hugo_blog/hugo_blog/2020/02/who-is-using-tranquilpeak-hugo-theme/">
-          欢迎来到孙军雨的技术博客
-        </a>
-      </h1>
-      
-  <div class="postShorten-meta post-meta">
-    
-      <time itemprop="datePublished" datetime="2020-02-14T00:00:00Z">
-        
-  February 14, 2020
-
-      </time>
-    
-    
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="/hugo_blog/categories/%e9%a6%96%e9%a1%b5">首页</a>
-    
-  
-
-  </div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      
-        欢迎来到孙军雨的技术博客，本站用于记录本人的学习笔记、技术点梳理等。欢迎各位指导和纠错。
- 
-联系我： QQ：2806287559
-​	微信：13466619275
-​	邮箱： sunjun_yu@163.com
-      
-      <p>
-        <a href="/hugo_blog/hugo_blog/2020/02/who-is-using-tranquilpeak-hugo-theme/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-    <a href="/hugo_blog/hugo_blog/2020/02/who-is-using-tranquilpeak-hugo-theme/">
-      <div class="postShorten-thumbnailimg">
-        <img alt="" itemprop="image" src="//d1u9biwaxjngwg.cloudfront.net/cover-image-showcase/city-750.jpg"/>
-      </div>
-    </a>
-  
-</article>
-
-          
-            
+              
   
     
       
@@ -562,10 +444,11 @@ Enqueue()——在队列尾部插入元素 Dequeue()——移除队列头部的�
   
 </article>
 
-          
-          
+            
+            
 
-        </section>
+          </section>
+        
         <footer id="footer" class="main-content-wrap">
   <span class="copyrights">
     &copy; 2020 孙军雨的技术博客. All Rights Reserved

@@ -6,10 +6,46 @@
     <description>Recent content in Categories on 孙军雨的技术博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 14 Feb 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 05 Mar 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/hugo_blog/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>三方登录</title>
+      <link>/hugo_blog/categories/%E4%B8%89%E6%96%B9%E7%99%BB%E5%BD%95/</link>
+      <pubDate>Thu, 05 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/hugo_blog/categories/%E4%B8%89%E6%96%B9%E7%99%BB%E5%BD%95/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>python</title>
+      <link>/hugo_blog/categories/python/</link>
+      <pubDate>Sun, 23 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/hugo_blog/categories/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>vue</title>
+      <link>/hugo_blog/categories/vue/</link>
+      <pubDate>Sun, 23 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/hugo_blog/categories/vue/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>七牛云</title>
+      <link>/hugo_blog/categories/%E4%B8%83%E7%89%9B%E4%BA%91/</link>
+      <pubDate>Sun, 23 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/hugo_blog/categories/%E4%B8%83%E7%89%9B%E4%BA%91/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>首页</title>
@@ -17,33 +53,6 @@
       <pubDate>Fri, 14 Feb 2020 00:00:00 +0000</pubDate>
       
       <guid>/hugo_blog/categories/%E9%A6%96%E9%A1%B5/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>showcase</title>
-      <link>/hugo_blog/categories/showcase/</link>
-      <pubDate>Sun, 14 Jun 2015 00:00:00 +0000</pubDate>
-      
-      <guid>/hugo_blog/categories/showcase/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>tranquilpeak</title>
-      <link>/hugo_blog/categories/tranquilpeak/</link>
-      <pubDate>Sun, 14 Jun 2015 00:00:00 +0000</pubDate>
-      
-      <guid>/hugo_blog/categories/tranquilpeak/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>features</title>
-      <link>/hugo_blog/categories/features/</link>
-      <pubDate>Thu, 28 May 2015 00:00:00 +0000</pubDate>
-      
-      <guid>/hugo_blog/categories/features/</guid>
       <description></description>
     </item>
     

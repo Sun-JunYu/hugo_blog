@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>三方登录 on 孙军雨的技术博客</title>
+    <link>/hugo_blog/tags/%E4%B8%89%E6%96%B9%E7%99%BB%E5%BD%95/</link>
+    <description>Recent content in 三方登录 on 孙军雨的技术博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 05 Mar 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/hugo_blog/tags/%E4%B8%89%E6%96%B9%E7%99%BB%E5%BD%95/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>三方登录</title>
+      <link>/hugo_blog/2020/03/%E4%B8%89%E6%96%B9%E7%99%BB%E5%BD%95/</link>
+      <pubDate>Thu, 05 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/hugo_blog/2020/03/%E4%B8%89%E6%96%B9%E7%99%BB%E5%BD%95/</guid>
+      <description>第三方登陆 1.微博登陆  vue向接口发送请求  Code
+&#39;https://api.weibo.com/oauth2/authorize?client_id=297351690&amp;amp;redirect_uri=http://127.0.0.1:8000/weibo_callback&#39;  微博回调接口  Python
+# 新浪微博回调 def wb_back(request): # 获取code code = request.GET.get(&#39;code&#39;) # 定义微博认证地址 data = { &#39;client_id&#39;: &#39;297351690&#39;, &#39;client_secret&#39;: &#39;8e24e86fd5dfa8d95675316bd969f9f1&#39;, &#39;grant_type&#39;: &#39;authorization_code&#39;, &#39;code&#39;: code, &#39;redirect_uri&#39;: &#39;http://127.0.0.1:8000/weibo_callback&#39; } url = &#39;https://api.weibo.com/oauth2/access_token&#39; res = requests.post(url, data=data).text res = json.loads(res) # return HttpResponse(res[&#39;uid&#39;]) # 获取新浪微博用户名 result = requests.get(url=&#39;https://api.weibo.com/2/users/show.json&#39;, params={&#39;access_token&#39;: res[&#39;access_token&#39;], &#39;uid&#39;: res[&#39;uid&#39;]}) result = json.loads(result.text) # print(result) # 判断该用户曾经是否登陆过 user = User.objects.filter(username=str(result[&#39;name&#39;])).first() sina_id = &#39;&#39; user_id = &#39;&#39; if user: sina_id = user.</description>
+    </item>
+    
+  </channel>
+</rss>

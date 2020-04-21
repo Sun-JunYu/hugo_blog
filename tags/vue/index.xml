@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>vue on 孙军雨的技术博客</title>
+    <link>/hugo_blog/tags/vue/</link>
+    <description>Recent content in vue on 孙军雨的技术博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 05 Mar 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/hugo_blog/tags/vue/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>三方登录</title>
+      <link>/hugo_blog/2020/03/%E4%B8%89%E6%96%B9%E7%99%BB%E5%BD%95/</link>
+      <pubDate>Thu, 05 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/hugo_blog/2020/03/%E4%B8%89%E6%96%B9%E7%99%BB%E5%BD%95/</guid>
+      <description>第三方登陆 1.微博登陆  vue向接口发送请求  Code
+&#39;https://api.weibo.com/oauth2/authorize?client_id=297351690&amp;amp;redirect_uri=http://127.0.0.1:8000/weibo_callback&#39;  微博回调接口  Python
+# 新浪微博回调 def wb_back(request): # 获取code code = request.GET.get(&#39;code&#39;) # 定义微博认证地址 data = { &#39;client_id&#39;: &#39;297351690&#39;, &#39;client_secret&#39;: &#39;8e24e86fd5dfa8d95675316bd969f9f1&#39;, &#39;grant_type&#39;: &#39;authorization_code&#39;, &#39;code&#39;: code, &#39;redirect_uri&#39;: &#39;http://127.0.0.1:8000/weibo_callback&#39; } url = &#39;https://api.weibo.com/oauth2/access_token&#39; res = requests.post(url, data=data).text res = json.loads(res) # return HttpResponse(res[&#39;uid&#39;]) # 获取新浪微博用户名 result = requests.get(url=&#39;https://api.weibo.com/2/users/show.json&#39;, params={&#39;access_token&#39;: res[&#39;access_token&#39;], &#39;uid&#39;: res[&#39;uid&#39;]}) result = json.loads(result.text) # print(result) # 判断该用户曾经是否登陆过 user = User.objects.filter(username=str(result[&#39;name&#39;])).first() sina_id = &#39;&#39; user_id = &#39;&#39; if user: sina_id = user.</description>
+    </item>
+    
+    <item>
+      <title>如何使用python&#43;Vue.js&#43;Django上传文件到七牛云</title>
+      <link>/hugo_blog/2020/02/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8python-vue.js-django%E4%B8%8A%E4%BC%A0%E6%96%87%E4%BB%B6%E5%88%B0%E4%B8%83%E7%89%9B%E4%BA%91/</link>
+      <pubDate>Sun, 23 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/hugo_blog/2020/02/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8python-vue.js-django%E4%B8%8A%E4%BC%A0%E6%96%87%E4%BB%B6%E5%88%B0%E4%B8%83%E7%89%9B%E4%BA%91/</guid>
+      <description>使用python+Vue.js+Django异步前端通过api上传文件到七牛云 ​ 首先注册七牛云：qiniu.com，进入你的七牛云账号，打开秘钥页，记录下你的ak和sk
+​ ​ 随后新建一个云存储空间，这里空间名字一定要记录一下：
+​ ​ 此时我们用django写一个获取uptoken的接口，使用drf框架来写，注意别忘了安装七牛云扩展 pip install qiniu
+​
+#七牛云token from qiniu import Auth class QiNiu(APIView): def get(self,request): q = Auth(&#39;E2IZM3koC1GR1DUqJHactmixzdyZZhx0edBKqDsk&#39;,&#39;GDnMkvRoE_kFhCSuvdqQj0VcNsRDOHzYJJ_bVd0_&#39;) token = q.upload_token(&#39;redinnovation&#39;) print(token) res = {} res[&#39;uptoken&#39;] = token return Response(res) ​ 访问django服务，确保每一次都会生成新的token,访问http://localhost:8000/uptoken/
+​ ​ 接口已经调试好，回到vue.js页面，添加一个上传控件
+​
+{{ imgLoadPercent }} &amp;lt;input @change=&amp;quot;uploadInputchange&amp;quot; id=&amp;quot;uploadFileInput&amp;quot; type=&amp;quot;file&amp;quot; &amp;gt; ​
+data () { return { uptoken:&#39;&#39;, imgLoadPercent:&#39;&#39;, } } ​ 然后在methods里添加几个方法：
+​
+get_token(){ this.axios.get(&#39;http://localhost:8000/uptoken/&#39;).then((result) =&amp;gt;{ console.log(result); this.uptoken = result.</description>
+    </item>
+    
+  </channel>
+</rss>

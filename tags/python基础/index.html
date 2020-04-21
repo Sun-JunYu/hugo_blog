@@ -13,10 +13,10 @@
 
 <meta property="og:description" content="Hugo tranquilpeak theme demo">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Posts">
-<meta name="twitter:title" content="Posts">
-<meta property="og:url" content="/hugo_blog/post/">
-<meta property="twitter:url" content="/hugo_blog/post/">
+<meta property="og:title" content="python基础">
+<meta name="twitter:title" content="python基础">
+<meta property="og:url" content="/hugo_blog/tags/python%E5%9F%BA%E7%A1%80/">
+<meta property="twitter:url" content="/hugo_blog/tags/python%E5%9F%BA%E7%A1%80/">
 <meta property="og:site_name" content="孙军雨的技术博客">
 <meta property="og:description" content="Hugo tranquilpeak theme demo">
 <meta name="twitter:description" content="Hugo tranquilpeak theme demo">
@@ -39,16 +39,16 @@
   <meta property="twitter:image" content="http://q92ekyelb.bkt.clouddn.com/authon.jpg">
 
 
-    <title>Posts</title>
+    <title>python基础</title>
 
     <link rel="icon" href="/hugo_blog/favicon.png">
     
-      <link rel="alternate" type="application/rss+xml" title="RSS" href="/hugo_blog/post/index.xml">
+      <link rel="alternate" type="application/rss+xml" title="RSS" href="/hugo_blog/tags/python%E5%9F%BA%E7%A1%80/index.xml">
     
 
     
 
-    <link rel="canonical" href="/hugo_blog/hugo_blog/post/">
+    <link rel="canonical" href="/hugo_blog/hugo_blog/tags/python%E5%9F%BA%E7%A1%80/">
 
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
@@ -197,74 +197,18 @@
 </nav>
 
       
+        
 
+      
       <div id="main" data-behavior="1"
         class="
                hasCoverMetaIn
                ">
-        <section class="postShorten-group main-content-wrap">
-          
-          
-          
+        
+          <section class="postShorten-group main-content-wrap">
             
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="/hugo_blog/hugo_blog/2020/03/%E4%B8%89%E6%96%B9%E7%99%BB%E5%BD%95/">
-          三方登录
-        </a>
-      </h1>
-      
-  <div class="postShorten-meta post-meta">
-    
-      <time itemprop="datePublished" datetime="2020-03-05T00:00:00Z">
-        
-  March 5, 2020
-
-      </time>
-    
-    
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="/hugo_blog/categories/%e4%b8%89%e6%96%b9%e7%99%bb%e5%bd%95">三方登录</a>
-    
-  
-
-  </div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      
-        第三方登陆 1.微博登陆  vue向接口发送请求  Code
-'https://api.weibo.com/oauth2/authorize?client_id=297351690&amp;redirect_uri=http://127.0.0.1:8000/weibo_callback'  微博回调接口  Python
-# 新浪微博回调 def wb_back(request): # 获取code code = request.GET.get('code') # 定义微博认证地址 data = { 'client_id': '297351690', 'client_secret': '8e24e86fd5dfa8d95675316bd969f9f1', 'grant_type': 'authorization_code', 'code': code, 'redirect_uri': 'http://127.0.0.1:8000/weibo_callback' } url = 'https://api.weibo.com/oauth2/access_token' res = requests.post(url, data=data).text res = json.loads(res) # return HttpResponse(res['uid']) # 获取新浪微博用户名 result = requests.get(url='https://api.weibo.com/2/users/show.json', params={'access_token': res['access_token'], 'uid': res['uid']}) result = json.loads(result.text) # print(result) # 判断该用户曾经是否登陆过 user = User.objects.filter(username=str(result['name'])).first() sina_id = '' user_id = '' if user: sina_id = user.
-      
-      <p>
-        <a href="/hugo_blog/hugo_blog/2020/03/%E4%B8%89%E6%96%B9%E7%99%BB%E5%BD%95/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-          
             
+              
   
     
       
@@ -334,140 +278,8 @@ num1 = 2 num2 = 2 print(id(num1), id(num2))
   
 </article>
 
-          
             
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="/hugo_blog/hugo_blog/2020/02/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8python-vue.js-django%E4%B8%8A%E4%BC%A0%E6%96%87%E4%BB%B6%E5%88%B0%E4%B8%83%E7%89%9B%E4%BA%91/">
-          如何使用python&#43;Vue.js&#43;Django上传文件到七牛云
-        </a>
-      </h1>
-      
-  <div class="postShorten-meta post-meta">
-    
-      <time itemprop="datePublished" datetime="2020-02-23T00:00:00Z">
-        
-  February 23, 2020
-
-      </time>
-    
-    
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="/hugo_blog/categories/python">python</a>, 
-    
-      <a class="category-link" href="/hugo_blog/categories/vue">vue</a>, 
-    
-      <a class="category-link" href="/hugo_blog/categories/%e4%b8%83%e7%89%9b%e4%ba%91">七牛云</a>
-    
-  
-
-  </div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      
-        使用python+Vue.js+Django异步前端通过api上传文件到七牛云 ​ 首先注册七牛云：qiniu.com，进入你的七牛云账号，打开秘钥页，记录下你的ak和sk
-​ ​ 随后新建一个云存储空间，这里空间名字一定要记录一下：
-​ ​ 此时我们用django写一个获取uptoken的接口，使用drf框架来写，注意别忘了安装七牛云扩展 pip install qiniu
-​
-#七牛云token from qiniu import Auth class QiNiu(APIView): def get(self,request): q = Auth('E2IZM3koC1GR1DUqJHactmixzdyZZhx0edBKqDsk','GDnMkvRoE_kFhCSuvdqQj0VcNsRDOHzYJJ_bVd0_') token = q.upload_token('redinnovation') print(token) res = {} res['uptoken'] = token return Response(res) ​ 访问django服务，确保每一次都会生成新的token,访问http://localhost:8000/uptoken/
-​ ​ 接口已经调试好，回到vue.js页面，添加一个上传控件
-​
-{{ imgLoadPercent }} &lt;input @change=&quot;uploadInputchange&quot; id=&quot;uploadFileInput&quot; type=&quot;file&quot; &gt; ​
-data () { return { uptoken:'', imgLoadPercent:'', } } ​ 然后在methods里添加几个方法：
-​
-get_token(){ this.axios.get('http://localhost:8000/uptoken/').then((result) =&gt;{ console.log(result); this.uptoken = result.
-      
-      <p>
-        <a href="/hugo_blog/hugo_blog/2020/02/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8python-vue.js-django%E4%B8%8A%E4%BC%A0%E6%96%87%E4%BB%B6%E5%88%B0%E4%B8%83%E7%89%9B%E4%BA%91/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-          
-            
-  
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-left" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="/hugo_blog/hugo_blog/2020/02/who-is-using-tranquilpeak-hugo-theme/">
-          欢迎来到孙军雨的技术博客
-        </a>
-      </h1>
-      
-  <div class="postShorten-meta post-meta">
-    
-      <time itemprop="datePublished" datetime="2020-02-14T00:00:00Z">
-        
-  February 14, 2020
-
-      </time>
-    
-    
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="/hugo_blog/categories/%e9%a6%96%e9%a1%b5">首页</a>
-    
-  
-
-  </div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      
-        欢迎来到孙军雨的技术博客，本站用于记录本人的学习笔记、技术点梳理等。欢迎各位指导和纠错。
- 
-联系我： QQ：2806287559
-​	微信：13466619275
-​	邮箱： sunjun_yu@163.com
-      
-      <p>
-        <a href="/hugo_blog/hugo_blog/2020/02/who-is-using-tranquilpeak-hugo-theme/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-    <a href="/hugo_blog/hugo_blog/2020/02/who-is-using-tranquilpeak-hugo-theme/">
-      <div class="postShorten-thumbnailimg">
-        <img alt="" itemprop="image" src="//d1u9biwaxjngwg.cloudfront.net/cover-image-showcase/city-750.jpg"/>
-      </div>
-    </a>
-  
-</article>
-
-          
-            
+              
   
     
       
@@ -562,10 +374,11 @@ Enqueue()——在队列尾部插入元素 Dequeue()——移除队列头部的�
   
 </article>
 
-          
-          
+            
+            
 
-        </section>
+          </section>
+        
         <footer id="footer" class="main-content-wrap">
   <span class="copyrights">
     &copy; 2020 孙军雨的技术博客. All Rights Reserved
