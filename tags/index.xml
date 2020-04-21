@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on 孙军雨的技术博客</title>
+    <link>/hugo_bolg/tags/</link>
+    <description>Recent content in Tags on 孙军雨的技术博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 28 May 2015 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/hugo_bolg/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>html elements</title>
+      <link>/hugo_bolg/tags/html-elements/</link>
+      <pubDate>Thu, 28 May 2015 00:00:00 +0000</pubDate>
+      
+      <guid>/hugo_bolg/tags/html-elements/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>markdown</title>
+      <link>/hugo_bolg/tags/markdown/</link>
+      <pubDate>Thu, 28 May 2015 00:00:00 +0000</pubDate>
+      
+      <guid>/hugo_bolg/tags/markdown/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>cover image</title>
+      <link>/hugo_bolg/tags/cover-image/</link>
+      <pubDate>Wed, 13 May 2015 00:00:00 +0000</pubDate>
+      
+      <guid>/hugo_bolg/tags/cover-image/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>github theme</title>
+      <link>/hugo_bolg/tags/github-theme/</link>
+      <pubDate>Mon, 23 Mar 2015 00:00:00 +0000</pubDate>
+      
+      <guid>/hugo_bolg/tags/github-theme/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>highlight code</title>
+      <link>/hugo_bolg/tags/highlight-code/</link>
+      <pubDate>Mon, 23 Mar 2015 00:00:00 +0000</pubDate>
+      
+      <guid>/hugo_bolg/tags/highlight-code/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>test</title>
+      <link>/hugo_bolg/tags/test/</link>
+      <pubDate>Mon, 23 Mar 2015 00:00:00 +0000</pubDate>
+      
+      <guid>/hugo_bolg/tags/test/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>tag plugins</title>
+      <link>/hugo_bolg/tags/tag-plugins/</link>
+      <pubDate>Wed, 29 Oct 2014 00:00:00 +0000</pubDate>
+      
+      <guid>/hugo_bolg/tags/tag-plugins/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>social</title>
+      <link>/hugo_bolg/tags/social/</link>
+      <pubDate>Sun, 17 Aug 2014 00:00:00 +0000</pubDate>
+      
+      <guid>/hugo_bolg/tags/social/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>tags</title>
+      <link>/hugo_bolg/tags/tags/</link>
+      <pubDate>Sat, 16 Aug 2014 00:00:00 +0000</pubDate>
+      
+      <guid>/hugo_bolg/tags/tags/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>pagination</title>
+      <link>/hugo_bolg/tags/pagination/</link>
+      <pubDate>Fri, 15 Aug 2014 00:00:00 +0000</pubDate>
+      
+      <guid>/hugo_bolg/tags/pagination/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>dailymotion</title>
+      <link>/hugo_bolg/tags/dailymotion/</link>
+      <pubDate>Sat, 09 Aug 2014 00:00:00 +0000</pubDate>
+      
+      <guid>/hugo_bolg/tags/dailymotion/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>videos integration</title>
+      <link>/hugo_bolg/tags/videos-integration/</link>
+      <pubDate>Sat, 09 Aug 2014 00:00:00 +0000</pubDate>
+      
+      <guid>/hugo_bolg/tags/videos-integration/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>vimeo</title>
+      <link>/hugo_bolg/tags/vimeo/</link>
+      <pubDate>Sat, 09 Aug 2014 00:00:00 +0000</pubDate>
+      
+      <guid>/hugo_bolg/tags/vimeo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>youtube</title>
+      <link>/hugo_bolg/tags/youtube/</link>
+      <pubDate>Sat, 09 Aug 2014 00:00:00 +0000</pubDate>
+      
+      <guid>/hugo_bolg/tags/youtube/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>chinese</title>
+      <link>/hugo_bolg/tags/chinese/</link>
+      <pubDate>Wed, 02 Oct 2013 00:00:00 +0000</pubDate>
+      
+      <guid>/hugo_bolg/tags/chinese/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>image gallery</title>
+      <link>/hugo_bolg/tags/image-gallery/</link>
+      <pubDate>Mon, 18 Feb 2013 00:00:00 +0000</pubDate>
+      
+      <guid>/hugo_bolg/tags/image-gallery/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>japanese</title>
+      <link>/hugo_bolg/tags/japanese/</link>
+      <pubDate>Wed, 02 Jan 2013 00:00:00 +0000</pubDate>
+      
+      <guid>/hugo_bolg/tags/japanese/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
