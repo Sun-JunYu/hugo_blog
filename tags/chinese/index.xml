@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>chinese on 孙军雨的技术博客</title>
-    <link>/hugo_bolg/tags/chinese/</link>
+    <link>/hugo_blog/tags/chinese/</link>
     <description>Recent content in chinese on 孙军雨的技术博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 02 Oct 2013 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/hugo_bolg/tags/chinese/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/hugo_blog/tags/chinese/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>中文測試</title>
-      <link>/hugo_bolg/2013/10/chinese-test/</link>
+      <link>/hugo_blog/2013/10/chinese-test/</link>
       <pubDate>Wed, 02 Oct 2013 00:00:00 +0000</pubDate>
       
-      <guid>/hugo_bolg/2013/10/chinese-test/</guid>
+      <guid>/hugo_blog/2013/10/chinese-test/</guid>
       <description>&lt;p&gt;This is a chinese test post to show you how chinese is displayed.&lt;/p&gt;</description>
     </item>
     

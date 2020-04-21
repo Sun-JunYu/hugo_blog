@@ -2,12 +2,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Archives on 孙军雨的技术博客</title>
-    <link>/hugo_bolg/archives/</link>
+    <link>/hugo_blog/archives/</link>
     <description>Recent content in Archives on 孙军雨的技术博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     
-	<atom:link href="/hugo_bolg/archives/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/hugo_blog/archives/index.xml" rel="self" type="application/rss+xml" />
     
     
   </channel>

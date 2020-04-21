@@ -2,165 +2,165 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on 孙军雨的技术博客</title>
-    <link>/hugo_bolg/tags/</link>
+    <link>/hugo_blog/tags/</link>
     <description>Recent content in Tags on 孙军雨的技术博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 28 May 2015 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/hugo_bolg/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/hugo_blog/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>html elements</title>
-      <link>/hugo_bolg/tags/html-elements/</link>
+      <link>/hugo_blog/tags/html-elements/</link>
       <pubDate>Thu, 28 May 2015 00:00:00 +0000</pubDate>
       
-      <guid>/hugo_bolg/tags/html-elements/</guid>
+      <guid>/hugo_blog/tags/html-elements/</guid>
       <description></description>
     </item>
     
     <item>
       <title>markdown</title>
-      <link>/hugo_bolg/tags/markdown/</link>
+      <link>/hugo_blog/tags/markdown/</link>
       <pubDate>Thu, 28 May 2015 00:00:00 +0000</pubDate>
       
-      <guid>/hugo_bolg/tags/markdown/</guid>
+      <guid>/hugo_blog/tags/markdown/</guid>
       <description></description>
     </item>
     
     <item>
       <title>cover image</title>
-      <link>/hugo_bolg/tags/cover-image/</link>
+      <link>/hugo_blog/tags/cover-image/</link>
       <pubDate>Wed, 13 May 2015 00:00:00 +0000</pubDate>
       
-      <guid>/hugo_bolg/tags/cover-image/</guid>
+      <guid>/hugo_blog/tags/cover-image/</guid>
       <description></description>
     </item>
     
     <item>
       <title>github theme</title>
-      <link>/hugo_bolg/tags/github-theme/</link>
+      <link>/hugo_blog/tags/github-theme/</link>
       <pubDate>Mon, 23 Mar 2015 00:00:00 +0000</pubDate>
       
-      <guid>/hugo_bolg/tags/github-theme/</guid>
+      <guid>/hugo_blog/tags/github-theme/</guid>
       <description></description>
     </item>
     
     <item>
       <title>highlight code</title>
-      <link>/hugo_bolg/tags/highlight-code/</link>
+      <link>/hugo_blog/tags/highlight-code/</link>
       <pubDate>Mon, 23 Mar 2015 00:00:00 +0000</pubDate>
       
-      <guid>/hugo_bolg/tags/highlight-code/</guid>
+      <guid>/hugo_blog/tags/highlight-code/</guid>
       <description></description>
     </item>
     
     <item>
       <title>test</title>
-      <link>/hugo_bolg/tags/test/</link>
+      <link>/hugo_blog/tags/test/</link>
       <pubDate>Mon, 23 Mar 2015 00:00:00 +0000</pubDate>
       
-      <guid>/hugo_bolg/tags/test/</guid>
+      <guid>/hugo_blog/tags/test/</guid>
       <description></description>
     </item>
     
     <item>
       <title>tag plugins</title>
-      <link>/hugo_bolg/tags/tag-plugins/</link>
+      <link>/hugo_blog/tags/tag-plugins/</link>
       <pubDate>Wed, 29 Oct 2014 00:00:00 +0000</pubDate>
       
-      <guid>/hugo_bolg/tags/tag-plugins/</guid>
+      <guid>/hugo_blog/tags/tag-plugins/</guid>
       <description></description>
     </item>
     
     <item>
       <title>social</title>
-      <link>/hugo_bolg/tags/social/</link>
+      <link>/hugo_blog/tags/social/</link>
       <pubDate>Sun, 17 Aug 2014 00:00:00 +0000</pubDate>
       
-      <guid>/hugo_bolg/tags/social/</guid>
+      <guid>/hugo_blog/tags/social/</guid>
       <description></description>
     </item>
     
     <item>
       <title>tags</title>
-      <link>/hugo_bolg/tags/tags/</link>
+      <link>/hugo_blog/tags/tags/</link>
       <pubDate>Sat, 16 Aug 2014 00:00:00 +0000</pubDate>
       
-      <guid>/hugo_bolg/tags/tags/</guid>
+      <guid>/hugo_blog/tags/tags/</guid>
       <description></description>
     </item>
     
     <item>
       <title>pagination</title>
-      <link>/hugo_bolg/tags/pagination/</link>
+      <link>/hugo_blog/tags/pagination/</link>
       <pubDate>Fri, 15 Aug 2014 00:00:00 +0000</pubDate>
       
-      <guid>/hugo_bolg/tags/pagination/</guid>
+      <guid>/hugo_blog/tags/pagination/</guid>
       <description></description>
     </item>
     
     <item>
       <title>dailymotion</title>
-      <link>/hugo_bolg/tags/dailymotion/</link>
+      <link>/hugo_blog/tags/dailymotion/</link>
       <pubDate>Sat, 09 Aug 2014 00:00:00 +0000</pubDate>
       
-      <guid>/hugo_bolg/tags/dailymotion/</guid>
+      <guid>/hugo_blog/tags/dailymotion/</guid>
       <description></description>
     </item>
     
     <item>
       <title>videos integration</title>
-      <link>/hugo_bolg/tags/videos-integration/</link>
+      <link>/hugo_blog/tags/videos-integration/</link>
       <pubDate>Sat, 09 Aug 2014 00:00:00 +0000</pubDate>
       
-      <guid>/hugo_bolg/tags/videos-integration/</guid>
+      <guid>/hugo_blog/tags/videos-integration/</guid>
       <description></description>
     </item>
     
     <item>
       <title>vimeo</title>
-      <link>/hugo_bolg/tags/vimeo/</link>
+      <link>/hugo_blog/tags/vimeo/</link>
       <pubDate>Sat, 09 Aug 2014 00:00:00 +0000</pubDate>
       
-      <guid>/hugo_bolg/tags/vimeo/</guid>
+      <guid>/hugo_blog/tags/vimeo/</guid>
       <description></description>
     </item>
     
     <item>
       <title>youtube</title>
-      <link>/hugo_bolg/tags/youtube/</link>
+      <link>/hugo_blog/tags/youtube/</link>
       <pubDate>Sat, 09 Aug 2014 00:00:00 +0000</pubDate>
       
-      <guid>/hugo_bolg/tags/youtube/</guid>
+      <guid>/hugo_blog/tags/youtube/</guid>
       <description></description>
     </item>
     
     <item>
       <title>chinese</title>
-      <link>/hugo_bolg/tags/chinese/</link>
+      <link>/hugo_blog/tags/chinese/</link>
       <pubDate>Wed, 02 Oct 2013 00:00:00 +0000</pubDate>
       
-      <guid>/hugo_bolg/tags/chinese/</guid>
+      <guid>/hugo_blog/tags/chinese/</guid>
       <description></description>
     </item>
     
     <item>
       <title>image gallery</title>
-      <link>/hugo_bolg/tags/image-gallery/</link>
+      <link>/hugo_blog/tags/image-gallery/</link>
       <pubDate>Mon, 18 Feb 2013 00:00:00 +0000</pubDate>
       
-      <guid>/hugo_bolg/tags/image-gallery/</guid>
+      <guid>/hugo_blog/tags/image-gallery/</guid>
       <description></description>
     </item>
     
     <item>
       <title>japanese</title>
-      <link>/hugo_bolg/tags/japanese/</link>
+      <link>/hugo_blog/tags/japanese/</link>
       <pubDate>Wed, 02 Jan 2013 00:00:00 +0000</pubDate>
       
-      <guid>/hugo_bolg/tags/japanese/</guid>
+      <guid>/hugo_blog/tags/japanese/</guid>
       <description></description>
     </item>
     

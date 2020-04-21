@@ -2,48 +2,48 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on 孙军雨的技术博客</title>
-    <link>/hugo_bolg/categories/</link>
+    <link>/hugo_blog/categories/</link>
     <description>Recent content in Categories on 孙军雨的技术博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 14 Feb 2020 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/hugo_bolg/categories/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/hugo_blog/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>首页</title>
-      <link>/hugo_bolg/categories/%E9%A6%96%E9%A1%B5/</link>
+      <link>/hugo_blog/categories/%E9%A6%96%E9%A1%B5/</link>
       <pubDate>Fri, 14 Feb 2020 00:00:00 +0000</pubDate>
       
-      <guid>/hugo_bolg/categories/%E9%A6%96%E9%A1%B5/</guid>
+      <guid>/hugo_blog/categories/%E9%A6%96%E9%A1%B5/</guid>
       <description></description>
     </item>
     
     <item>
       <title>showcase</title>
-      <link>/hugo_bolg/categories/showcase/</link>
+      <link>/hugo_blog/categories/showcase/</link>
       <pubDate>Sun, 14 Jun 2015 00:00:00 +0000</pubDate>
       
-      <guid>/hugo_bolg/categories/showcase/</guid>
+      <guid>/hugo_blog/categories/showcase/</guid>
       <description></description>
     </item>
     
     <item>
       <title>tranquilpeak</title>
-      <link>/hugo_bolg/categories/tranquilpeak/</link>
+      <link>/hugo_blog/categories/tranquilpeak/</link>
       <pubDate>Sun, 14 Jun 2015 00:00:00 +0000</pubDate>
       
-      <guid>/hugo_bolg/categories/tranquilpeak/</guid>
+      <guid>/hugo_blog/categories/tranquilpeak/</guid>
       <description></description>
     </item>
     
     <item>
       <title>features</title>
-      <link>/hugo_bolg/categories/features/</link>
+      <link>/hugo_blog/categories/features/</link>
       <pubDate>Thu, 28 May 2015 00:00:00 +0000</pubDate>
       
-      <guid>/hugo_bolg/categories/features/</guid>
+      <guid>/hugo_blog/categories/features/</guid>
       <description></description>
     </item>
     
