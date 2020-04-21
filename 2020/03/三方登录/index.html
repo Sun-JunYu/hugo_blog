@@ -8,18 +8,26 @@
 <meta name="generator" content="Hugo 0.68.3 with theme Tranquilpeak 0.4.7-BETA">
 <meta name="author" content="孙军雨的技术博客">
 <meta name="keywords" content="">
-<meta name="description" content="使用微博、钉钉、支付宝接口实现三方登录">
+<meta name="description" content="第三方登陆 1.微博登陆  vue向接口发送请求  Code
+&#39;https://api.weibo.com/oauth2/authorize?client_id=297351690&amp;redirect_uri=http://127.0.0.1:8000/weibo_callback&#39;  微博回调接口  Python
+# 新浪微博回调 def wb_back(request): # 获取code code = request.GET.get(&#39;code&#39;) # 定义微博认证地址 data = { &#39;client_id&#39;: &#39;297351690&#39;, &#39;client_secret&#39;: &#39;8e24e86fd5dfa8d95675316bd969f9f1&#39;, &#39;grant_type&#39;: &#39;authorization_code&#39;, &#39;code&#39;: code, &#39;redirect_uri&#39;: &#39;http://127.0.0.1:8000/weibo_callback&#39; } url = &#39;https://api.weibo.com/oauth2/access_token&#39; res = requests.post(url, data=data).text res = json.loads(res) # return HttpResponse(res[&#39;uid&#39;]) # 获取新浪微博用户名 result = requests.get(url=&#39;https://api.weibo.com/2/users/show.json&#39;, params={&#39;access_token&#39;: res[&#39;access_token&#39;], &#39;uid&#39;: res[&#39;uid&#39;]}) result = json.loads(result.text) # print(result) # 判断该用户曾经是否登陆过 user = User.objects.filter(username=str(result[&#39;name&#39;])).first() sina_id = &#39;&#39; user_id = &#39;&#39; if user: sina_id = user.">
 
 
-<meta property="og:description" content="使用微博、钉钉、支付宝接口实现三方登录">
+<meta property="og:description" content="第三方登陆 1.微博登陆  vue向接口发送请求  Code
+&#39;https://api.weibo.com/oauth2/authorize?client_id=297351690&amp;redirect_uri=http://127.0.0.1:8000/weibo_callback&#39;  微博回调接口  Python
+# 新浪微博回调 def wb_back(request): # 获取code code = request.GET.get(&#39;code&#39;) # 定义微博认证地址 data = { &#39;client_id&#39;: &#39;297351690&#39;, &#39;client_secret&#39;: &#39;8e24e86fd5dfa8d95675316bd969f9f1&#39;, &#39;grant_type&#39;: &#39;authorization_code&#39;, &#39;code&#39;: code, &#39;redirect_uri&#39;: &#39;http://127.0.0.1:8000/weibo_callback&#39; } url = &#39;https://api.weibo.com/oauth2/access_token&#39; res = requests.post(url, data=data).text res = json.loads(res) # return HttpResponse(res[&#39;uid&#39;]) # 获取新浪微博用户名 result = requests.get(url=&#39;https://api.weibo.com/2/users/show.json&#39;, params={&#39;access_token&#39;: res[&#39;access_token&#39;], &#39;uid&#39;: res[&#39;uid&#39;]}) result = json.loads(result.text) # print(result) # 判断该用户曾经是否登陆过 user = User.objects.filter(username=str(result[&#39;name&#39;])).first() sina_id = &#39;&#39; user_id = &#39;&#39; if user: sina_id = user.">
 <meta property="og:type" content="article">
 <meta property="og:title" content="三方登录">
 <meta name="twitter:title" content="三方登录">
 <meta property="og:url" content="/hugo_blog/2020/03/%E4%B8%89%E6%96%B9%E7%99%BB%E5%BD%95/">
 <meta property="twitter:url" content="/hugo_blog/2020/03/%E4%B8%89%E6%96%B9%E7%99%BB%E5%BD%95/">
 <meta property="og:site_name" content="孙军雨的技术博客">
-<meta property="og:description" content="使用微博、钉钉、支付宝接口实现三方登录">
-<meta name="twitter:description" content="使用微博、钉钉、支付宝接口实现三方登录">
+<meta property="og:description" content="第三方登陆 1.微博登陆  vue向接口发送请求  Code
+&#39;https://api.weibo.com/oauth2/authorize?client_id=297351690&amp;redirect_uri=http://127.0.0.1:8000/weibo_callback&#39;  微博回调接口  Python
+# 新浪微博回调 def wb_back(request): # 获取code code = request.GET.get(&#39;code&#39;) # 定义微博认证地址 data = { &#39;client_id&#39;: &#39;297351690&#39;, &#39;client_secret&#39;: &#39;8e24e86fd5dfa8d95675316bd969f9f1&#39;, &#39;grant_type&#39;: &#39;authorization_code&#39;, &#39;code&#39;: code, &#39;redirect_uri&#39;: &#39;http://127.0.0.1:8000/weibo_callback&#39; } url = &#39;https://api.weibo.com/oauth2/access_token&#39; res = requests.post(url, data=data).text res = json.loads(res) # return HttpResponse(res[&#39;uid&#39;]) # 获取新浪微博用户名 result = requests.get(url=&#39;https://api.weibo.com/2/users/show.json&#39;, params={&#39;access_token&#39;: res[&#39;access_token&#39;], &#39;uid&#39;: res[&#39;uid&#39;]}) result = json.loads(result.text) # print(result) # 判断该用户曾经是否登陆过 user = User.objects.filter(username=str(result[&#39;name&#39;])).first() sina_id = &#39;&#39; user_id = &#39;&#39; if user: sina_id = user.">
+<meta name="twitter:description" content="第三方登陆 1.微博登陆  vue向接口发送请求  Code
+&#39;https://api.weibo.com/oauth2/authorize?client_id=297351690&amp;redirect_uri=http://127.0.0.1:8000/weibo_callback&#39;  微博回调接口  Python
+# 新浪微博回调 def wb_back(request): # 获取code code = request.GET.get(&#39;code&#39;) # 定义微博认证地址 data = { &#39;client_id&#39;: &#39;297351690&#39;, &#39;client_secret&#39;: &#39;8e24e86fd5dfa8d95675316bd969f9f1&#39;, &#39;grant_type&#39;: &#39;authorization_code&#39;, &#39;code&#39;: code, &#39;redirect_uri&#39;: &#39;http://127.0.0.1:8000/weibo_callback&#39; } url = &#39;https://api.weibo.com/oauth2/access_token&#39; res = requests.post(url, data=data).text res = json.loads(res) # return HttpResponse(res[&#39;uid&#39;]) # 获取新浪微博用户名 result = requests.get(url=&#39;https://api.weibo.com/2/users/show.json&#39;, params={&#39;access_token&#39;: res[&#39;access_token&#39;], &#39;uid&#39;: res[&#39;uid&#39;]}) result = json.loads(result.text) # print(result) # 判断该用户曾经是否登陆过 user = User.objects.filter(username=str(result[&#39;name&#39;])).first() sina_id = &#39;&#39; user_id = &#39;&#39; if user: sina_id = user.">
 <meta property="og:locale" content="en-us">
 
   
@@ -52,6 +60,9 @@
 
 
 
+
+  <meta property="og:image" content="//d1u9biwaxjngwg.cloudfront.net/video-integration-showcase/peak-140.jpg">
+  <meta property="twitter:image" content="//d1u9biwaxjngwg.cloudfront.net/video-integration-showcase/peak-140.jpg">
 
 
 
@@ -448,58 +459,50 @@ alipay = AliPay(
 <pre><code># 支付接口
 app_private_key_string = open(os.path.join(settings.BASE_DIR,&quot;utils&quot;,&quot;key&quot;,&quot;app_private_key.txt&quot;)).read()
 alipay_public_key_string = open(os.path.join(settings.BASE_DIR,&quot;utils&quot;,&quot;key&quot;,&quot;alipay_public_key.txt&quot;)).read()
+</code></pre><p>app_private_key_string == &quot;&rdquo;&rdquo;
+&mdash;&ndash;BEGIN RSA PRIVATE KEY&mdash;&ndash;
+base64 encoded content
+&mdash;&ndash;END RSA PRIVATE KEY&mdash;&ndash;
+&quot;&rdquo;&rdquo;</p>
+<p>alipay_public_key_string == &quot;&rdquo;&rdquo;
+&mdash;&ndash;BEGIN PUBLIC KEY&mdash;&ndash;
+base64 encoded content
+&mdash;&ndash;END PUBLIC KEY&mdash;&ndash;
+&quot;&rdquo;&rdquo;</p>
+<p>alipay = AliPay(
+appid=&quot;2016101700704372&rdquo;,
+app_notify_url=&quot;http://127.0.0.1:8001/app/alipay_callback/&quot;,  # 默认回调url
+app_private_key_string=app_private_key_string,
+# 支付宝的公钥，验证支付宝回传消息使用，不是你自己的公钥,
+alipay_public_key_string=alipay_public_key_string,
+sign_type=&quot;RSA2&rdquo;, # RSA 或者 RSA2
+debug=False  # 默认False
+)</p>
+<p>class AlipayAPIView(APIView):
+def post(self, request):
+# 如果你是Python 2用户（考虑考虑升级到Python 3吧），请确保非ascii的字符串为utf8编码：
+# subject = u&quot;测试订单&rdquo;.encode(&ldquo;utf8&rdquo;)
+# 如果你是 Python 3的用户，使用默认的字符串即可
+subject = &ldquo;XXX商家——护目镜&rdquo;</p>
+<pre><code>    # 电脑网站支付，需要跳转到https://openapi.alipay.com/gateway.do? + order_string
+    order_string = alipay.api_alipay_trade_page_pay(
+        out_trade_no=&quot;1906B00005&quot;,
+        total_amount=9.01,
+        subject=subject,
+        return_url=&quot;http://127.0.0.1:8001/app/alipay_callback/&quot;,
+        notify_url=&quot;http://127.0.0.1:8001/app/alipay_callback/&quot;  # 可选, 不填则使用默认notify url
+    )
 
-
-app_private_key_string == &quot;&quot;&quot;
-    -----BEGIN RSA PRIVATE KEY-----
-    base64 encoded content
-    -----END RSA PRIVATE KEY-----
-&quot;&quot;&quot;
-
-alipay_public_key_string == &quot;&quot;&quot;
-    -----BEGIN PUBLIC KEY-----
-    base64 encoded content
-    -----END PUBLIC KEY-----
-&quot;&quot;&quot;
-
-
-alipay = AliPay(
-    appid=&quot;2016101700704372&quot;,
-    app_notify_url=&quot;http://127.0.0.1:8001/app/alipay_callback/&quot;,  # 默认回调url
-    app_private_key_string=app_private_key_string,
-    # 支付宝的公钥，验证支付宝回传消息使用，不是你自己的公钥,
-    alipay_public_key_string=alipay_public_key_string,
-    sign_type=&quot;RSA2&quot;, # RSA 或者 RSA2
-    debug=False  # 默认False
-)
-
-
-class AlipayAPIView(APIView):
-    def post(self, request):
-        # 如果你是Python 2用户（考虑考虑升级到Python 3吧），请确保非ascii的字符串为utf8编码：
-        # subject = u&quot;测试订单&quot;.encode(&quot;utf8&quot;)
-        # 如果你是 Python 3的用户，使用默认的字符串即可
-        subject = &quot;XXX商家——护目镜&quot;
-
-        # 电脑网站支付，需要跳转到https://openapi.alipay.com/gateway.do? + order_string
-        order_string = alipay.api_alipay_trade_page_pay(
-            out_trade_no=&quot;1906B00005&quot;,
-            total_amount=9.01,
-            subject=subject,
-            return_url=&quot;http://127.0.0.1:8001/app/alipay_callback/&quot;,
-            notify_url=&quot;http://127.0.0.1:8001/app/alipay_callback/&quot;  # 可选, 不填则使用默认notify url
-        )
-
-        # 支付页面的路由.返回给vue。 vue引导用户访问这个路由，进行支付
-        # windows.location.href=&quot;&quot;
-        pay_url = &quot;https://openapi.alipaydev.com/gateway.do?&quot; + order_string
-        print(pay_url)
-        return Response({
-            &quot;code&quot;: 200,
-            &quot;url&quot;: pay_url
-        })
-
-</code></pre></li>
+    # 支付页面的路由.返回给vue。 vue引导用户访问这个路由，进行支付
+    # windows.location.href=&quot;&quot;
+    pay_url = &quot;https://openapi.alipaydev.com/gateway.do?&quot; + order_string
+    print(pay_url)
+    return Response({
+        &quot;code&quot;: 200,
+        &quot;url&quot;: pay_url
+    })
+</code></pre>
+<pre><code></code></pre></li>
 </ul>
 </li>
 </ol>

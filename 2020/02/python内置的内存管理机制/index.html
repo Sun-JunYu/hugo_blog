@@ -8,18 +8,78 @@
 <meta name="generator" content="Hugo 0.68.3 with theme Tranquilpeak 0.4.7-BETA">
 <meta name="author" content="孙军雨的技术博客">
 <meta name="keywords" content="">
-<meta name="description" content="python中的内存管理">
+<meta name="description" content="在Python中是如何管理内存的 Python有一个私有堆空间来保存所有的对象和数据结构。作为开发者，我们无法访问它，是解释器在管理它。但是有了核心API后，我们可以访问一些工具。Python内存管理器控制内存分配。
+另外，内置垃圾回收器会回收使用所有的未使用内存，所以使其适用于堆空间。
+一、垃圾回收：python不像C&#43;&#43;，Java等语言一样，他们可以不用事先声明变量类型而直接对变量进行赋值。对Python语言来讲，对象的类型和内存都是在运行时确定的。这也是为什么我们称Python语言为动态类型的原因(这里我们把动态类型可以简单的归结为对变量内存地址的分配是在运行时自动判断变量类型并对变量进行赋值)。
+二、引用计数：Python采用了类似Windows内核对象一样的方式来对内存进行管理。每一个对象，都维护这一个对指向该对对象的引用的计数。当变量被绑定在一个对象上的时候，该变量的引用计数就是1，(还有另外一些情况也会导致变量引用计数的增加),系统会自动维护这些标签，并定时扫描，当某标签的引用计数变为0的时候，该对就会被回收。
+1 对象存储
+在Python中万物皆对象
+不存在基本数据类型，0, 1.2, True, False, &ldquo;abc&quot;等，这些全都是对象
+所有对象, 都会在内存中开辟一块空间进行存储
+2.1 会根据不同的类型以及内容, 开辟不同的空间大小进行存储 2.2 返回该空间的地址给外界接收(称为&quot;引用&rdquo;), 用于后续对这个对象的操作 2.3 可通过 id() 函数获取内存地址(10进制) 2.4 通过 hex() 函数可以查看对应的16进制地址
+class Person: pass
+p = Person() print(p) print(id(p)) print(hex(id(p)))
+    打印结果
+    &lt;__main__.Person object at 0x107030470&gt; 4412605552 0x107030470 对于整数和短小的字符, Python会进行缓存; 不会创建多个相同对象
+此时, 被多次赋值, 只会有多份引用
+num1 = 2 num2 = 2 print(id(num1), id(num2))
+    打印结果">
 
 
-<meta property="og:description" content="python中的内存管理">
+<meta property="og:description" content="在Python中是如何管理内存的 Python有一个私有堆空间来保存所有的对象和数据结构。作为开发者，我们无法访问它，是解释器在管理它。但是有了核心API后，我们可以访问一些工具。Python内存管理器控制内存分配。
+另外，内置垃圾回收器会回收使用所有的未使用内存，所以使其适用于堆空间。
+一、垃圾回收：python不像C&#43;&#43;，Java等语言一样，他们可以不用事先声明变量类型而直接对变量进行赋值。对Python语言来讲，对象的类型和内存都是在运行时确定的。这也是为什么我们称Python语言为动态类型的原因(这里我们把动态类型可以简单的归结为对变量内存地址的分配是在运行时自动判断变量类型并对变量进行赋值)。
+二、引用计数：Python采用了类似Windows内核对象一样的方式来对内存进行管理。每一个对象，都维护这一个对指向该对对象的引用的计数。当变量被绑定在一个对象上的时候，该变量的引用计数就是1，(还有另外一些情况也会导致变量引用计数的增加),系统会自动维护这些标签，并定时扫描，当某标签的引用计数变为0的时候，该对就会被回收。
+1 对象存储
+在Python中万物皆对象
+不存在基本数据类型，0, 1.2, True, False, &ldquo;abc&quot;等，这些全都是对象
+所有对象, 都会在内存中开辟一块空间进行存储
+2.1 会根据不同的类型以及内容, 开辟不同的空间大小进行存储 2.2 返回该空间的地址给外界接收(称为&quot;引用&rdquo;), 用于后续对这个对象的操作 2.3 可通过 id() 函数获取内存地址(10进制) 2.4 通过 hex() 函数可以查看对应的16进制地址
+class Person: pass
+p = Person() print(p) print(id(p)) print(hex(id(p)))
+    打印结果
+    &lt;__main__.Person object at 0x107030470&gt; 4412605552 0x107030470 对于整数和短小的字符, Python会进行缓存; 不会创建多个相同对象
+此时, 被多次赋值, 只会有多份引用
+num1 = 2 num2 = 2 print(id(num1), id(num2))
+    打印结果">
 <meta property="og:type" content="article">
 <meta property="og:title" content="python内置的内存管理机制">
 <meta name="twitter:title" content="python内置的内存管理机制">
 <meta property="og:url" content="/hugo_blog/2020/02/python%E5%86%85%E7%BD%AE%E7%9A%84%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%E6%9C%BA%E5%88%B6/">
 <meta property="twitter:url" content="/hugo_blog/2020/02/python%E5%86%85%E7%BD%AE%E7%9A%84%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%E6%9C%BA%E5%88%B6/">
 <meta property="og:site_name" content="孙军雨的技术博客">
-<meta property="og:description" content="python中的内存管理">
-<meta name="twitter:description" content="python中的内存管理">
+<meta property="og:description" content="在Python中是如何管理内存的 Python有一个私有堆空间来保存所有的对象和数据结构。作为开发者，我们无法访问它，是解释器在管理它。但是有了核心API后，我们可以访问一些工具。Python内存管理器控制内存分配。
+另外，内置垃圾回收器会回收使用所有的未使用内存，所以使其适用于堆空间。
+一、垃圾回收：python不像C&#43;&#43;，Java等语言一样，他们可以不用事先声明变量类型而直接对变量进行赋值。对Python语言来讲，对象的类型和内存都是在运行时确定的。这也是为什么我们称Python语言为动态类型的原因(这里我们把动态类型可以简单的归结为对变量内存地址的分配是在运行时自动判断变量类型并对变量进行赋值)。
+二、引用计数：Python采用了类似Windows内核对象一样的方式来对内存进行管理。每一个对象，都维护这一个对指向该对对象的引用的计数。当变量被绑定在一个对象上的时候，该变量的引用计数就是1，(还有另外一些情况也会导致变量引用计数的增加),系统会自动维护这些标签，并定时扫描，当某标签的引用计数变为0的时候，该对就会被回收。
+1 对象存储
+在Python中万物皆对象
+不存在基本数据类型，0, 1.2, True, False, &ldquo;abc&quot;等，这些全都是对象
+所有对象, 都会在内存中开辟一块空间进行存储
+2.1 会根据不同的类型以及内容, 开辟不同的空间大小进行存储 2.2 返回该空间的地址给外界接收(称为&quot;引用&rdquo;), 用于后续对这个对象的操作 2.3 可通过 id() 函数获取内存地址(10进制) 2.4 通过 hex() 函数可以查看对应的16进制地址
+class Person: pass
+p = Person() print(p) print(id(p)) print(hex(id(p)))
+    打印结果
+    &lt;__main__.Person object at 0x107030470&gt; 4412605552 0x107030470 对于整数和短小的字符, Python会进行缓存; 不会创建多个相同对象
+此时, 被多次赋值, 只会有多份引用
+num1 = 2 num2 = 2 print(id(num1), id(num2))
+    打印结果">
+<meta name="twitter:description" content="在Python中是如何管理内存的 Python有一个私有堆空间来保存所有的对象和数据结构。作为开发者，我们无法访问它，是解释器在管理它。但是有了核心API后，我们可以访问一些工具。Python内存管理器控制内存分配。
+另外，内置垃圾回收器会回收使用所有的未使用内存，所以使其适用于堆空间。
+一、垃圾回收：python不像C&#43;&#43;，Java等语言一样，他们可以不用事先声明变量类型而直接对变量进行赋值。对Python语言来讲，对象的类型和内存都是在运行时确定的。这也是为什么我们称Python语言为动态类型的原因(这里我们把动态类型可以简单的归结为对变量内存地址的分配是在运行时自动判断变量类型并对变量进行赋值)。
+二、引用计数：Python采用了类似Windows内核对象一样的方式来对内存进行管理。每一个对象，都维护这一个对指向该对对象的引用的计数。当变量被绑定在一个对象上的时候，该变量的引用计数就是1，(还有另外一些情况也会导致变量引用计数的增加),系统会自动维护这些标签，并定时扫描，当某标签的引用计数变为0的时候，该对就会被回收。
+1 对象存储
+在Python中万物皆对象
+不存在基本数据类型，0, 1.2, True, False, &ldquo;abc&quot;等，这些全都是对象
+所有对象, 都会在内存中开辟一块空间进行存储
+2.1 会根据不同的类型以及内容, 开辟不同的空间大小进行存储 2.2 返回该空间的地址给外界接收(称为&quot;引用&rdquo;), 用于后续对这个对象的操作 2.3 可通过 id() 函数获取内存地址(10进制) 2.4 通过 hex() 函数可以查看对应的16进制地址
+class Person: pass
+p = Person() print(p) print(id(p)) print(hex(id(p)))
+    打印结果
+    &lt;__main__.Person object at 0x107030470&gt; 4412605552 0x107030470 对于整数和短小的字符, Python会进行缓存; 不会创建多个相同对象
+此时, 被多次赋值, 只会有多份引用
+num1 = 2 num2 = 2 print(id(num1), id(num2))
+    打印结果">
 <meta property="og:locale" content="en-us">
 
   
@@ -48,6 +108,9 @@
 
 
 
+
+  <meta property="og:image" content="//d1u9biwaxjngwg.cloudfront.net/video-integration-showcase/peak-140.jpg">
+  <meta property="twitter:image" content="//d1u9biwaxjngwg.cloudfront.net/video-integration-showcase/peak-140.jpg">
 
 
 
