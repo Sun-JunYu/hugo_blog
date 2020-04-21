@@ -219,7 +219,7 @@
     
     <div class="postShorten-header">
       <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="/hugo_blog/hugo_blog/2020/03/%E4%B8%89%E6%96%B9%E7%99%BB%E5%BD%95/">
+        <a class="link-unstyled" href="/hugo_blog/hugo_blog/2020/03/">
           三方登录
         </a>
       </h1>
@@ -251,13 +251,13 @@
 # 新浪微博回调 def wb_back(request): # 获取code code = request.GET.get('code') # 定义微博认证地址 data = { 'client_id': '297351690', 'client_secret': '8e24e86fd5dfa8d95675316bd969f9f1', 'grant_type': 'authorization_code', 'code': code, 'redirect_uri': 'http://127.0.0.1:8000/weibo_callback' } url = 'https://api.weibo.com/oauth2/access_token' res = requests.post(url, data=data).text res = json.loads(res) # return HttpResponse(res['uid']) # 获取新浪微博用户名 result = requests.get(url='https://api.weibo.com/2/users/show.json', params={'access_token': res['access_token'], 'uid': res['uid']}) result = json.loads(result.text) # print(result) # 判断该用户曾经是否登陆过 user = User.objects.filter(username=str(result['name'])).first() sina_id = '' user_id = '' if user: sina_id = user.
       
       <p>
-        <a href="/hugo_blog/hugo_blog/2020/03/%E4%B8%89%E6%96%B9%E7%99%BB%E5%BD%95/" class="postShorten-excerpt_link link">Continue reading</a>
+        <a href="/hugo_blog/hugo_blog/2020/03/" class="postShorten-excerpt_link link">Continue reading</a>
         
       </p>
     </div>
   </div>
   
-    <a href="/hugo_blog/hugo_blog/2020/03/%E4%B8%89%E6%96%B9%E7%99%BB%E5%BD%95/">
+    <a href="/hugo_blog/hugo_blog/2020/03/">
       <div class="postShorten-thumbnailimg">
         <img alt="" itemprop="image" src="//d1u9biwaxjngwg.cloudfront.net/video-integration-showcase/peak-140.jpg"/>
       </div>
@@ -279,7 +279,7 @@
     
     <div class="postShorten-header">
       <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="/hugo_blog/hugo_blog/2020/02/python%E5%86%85%E7%BD%AE%E7%9A%84%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%E6%9C%BA%E5%88%B6/">
+        <a class="link-unstyled" href="/hugo_blog/hugo_blog/2020/02/">
           python内置的内存管理机制
         </a>
       </h1>
@@ -324,13 +324,13 @@ num1 = 2 num2 = 2 print(id(num1), id(num2))
     打印结果
       
       <p>
-        <a href="/hugo_blog/hugo_blog/2020/02/python%E5%86%85%E7%BD%AE%E7%9A%84%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%E6%9C%BA%E5%88%B6/" class="postShorten-excerpt_link link">Continue reading</a>
+        <a href="/hugo_blog/hugo_blog/2020/02/" class="postShorten-excerpt_link link">Continue reading</a>
         
       </p>
     </div>
   </div>
   
-    <a href="/hugo_blog/hugo_blog/2020/02/python%E5%86%85%E7%BD%AE%E7%9A%84%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%E6%9C%BA%E5%88%B6/">
+    <a href="/hugo_blog/hugo_blog/2020/02/">
       <div class="postShorten-thumbnailimg">
         <img alt="" itemprop="image" src="//d1u9biwaxjngwg.cloudfront.net/video-integration-showcase/peak-140.jpg"/>
       </div>
@@ -352,7 +352,7 @@ num1 = 2 num2 = 2 print(id(num1), id(num2))
     
     <div class="postShorten-header">
       <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="/hugo_blog/hugo_blog/2020/02/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8python-vue.js-django%E4%B8%8A%E4%BC%A0%E6%96%87%E4%BB%B6%E5%88%B0%E4%B8%83%E7%89%9B%E4%BA%91/">
+        <a class="link-unstyled" href="/hugo_blog/hugo_blog/2020/02/">
           如何使用python&#43;Vue.js&#43;Django上传文件到七牛云
         </a>
       </h1>
@@ -396,13 +396,13 @@ data () { return { uptoken:'', imgLoadPercent:'', } } ​ 然后在methods里添
 get_token(){ this.axios.get('http://localhost:8000/uptoken/').then((result) =&gt;{ console.log(result); this.uptoken = result.
       
       <p>
-        <a href="/hugo_blog/hugo_blog/2020/02/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8python-vue.js-django%E4%B8%8A%E4%BC%A0%E6%96%87%E4%BB%B6%E5%88%B0%E4%B8%83%E7%89%9B%E4%BA%91/" class="postShorten-excerpt_link link">Continue reading</a>
+        <a href="/hugo_blog/hugo_blog/2020/02/" class="postShorten-excerpt_link link">Continue reading</a>
         
       </p>
     </div>
   </div>
   
-    <a href="/hugo_blog/hugo_blog/2020/02/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8python-vue.js-django%E4%B8%8A%E4%BC%A0%E6%96%87%E4%BB%B6%E5%88%B0%E4%B8%83%E7%89%9B%E4%BA%91/">
+    <a href="/hugo_blog/hugo_blog/2020/02/">
       <div class="postShorten-thumbnailimg">
         <img alt="" itemprop="image" src="//d1u9biwaxjngwg.cloudfront.net/video-integration-showcase/peak-140.jpg"/>
       </div>
@@ -424,7 +424,7 @@ get_token(){ this.axios.get('http://localhost:8000/uptoken/').then((result) =&gt
     
     <div class="postShorten-header">
       <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="/hugo_blog/hugo_blog/2020/02/who-is-using-tranquilpeak-hugo-theme/">
+        <a class="link-unstyled" href="/hugo_blog/hugo_blog/2020/02/">
           欢迎来到孙军雨的技术博客
         </a>
       </h1>
@@ -458,13 +458,13 @@ get_token(){ this.axios.get('http://localhost:8000/uptoken/').then((result) =&gt
 ​	邮箱： sunjun_yu@163.com
       
       <p>
-        <a href="/hugo_blog/hugo_blog/2020/02/who-is-using-tranquilpeak-hugo-theme/" class="postShorten-excerpt_link link">Continue reading</a>
+        <a href="/hugo_blog/hugo_blog/2020/02/" class="postShorten-excerpt_link link">Continue reading</a>
         
       </p>
     </div>
   </div>
   
-    <a href="/hugo_blog/hugo_blog/2020/02/who-is-using-tranquilpeak-hugo-theme/">
+    <a href="/hugo_blog/hugo_blog/2020/02/">
       <div class="postShorten-thumbnailimg">
         <img alt="" itemprop="image" src="//d1u9biwaxjngwg.cloudfront.net/cover-image-showcase/city-750.jpg"/>
       </div>
@@ -486,7 +486,7 @@ get_token(){ this.axios.get('http://localhost:8000/uptoken/').then((result) =&gt
     
     <div class="postShorten-header">
       <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="/hugo_blog/hugo_blog/1/01/python%E7%9A%84%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
+        <a class="link-unstyled" href="/hugo_blog/hugo_blog/1/01/">
           python的数据结构
         </a>
       </h1>
@@ -556,13 +556,13 @@ Enqueue()——在队列尾部插入元素 Dequeue()——移除队列头部的�
 链表一般用于实现文件系统、哈希表和邻接表。
       
       <p>
-        <a href="/hugo_blog/hugo_blog/1/01/python%E7%9A%84%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="postShorten-excerpt_link link">Continue reading</a>
+        <a href="/hugo_blog/hugo_blog/1/01/" class="postShorten-excerpt_link link">Continue reading</a>
         
       </p>
     </div>
   </div>
   
-    <a href="/hugo_blog/hugo_blog/1/01/python%E7%9A%84%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
+    <a href="/hugo_blog/hugo_blog/1/01/">
       <div class="postShorten-thumbnailimg">
         <img alt="" itemprop="image" src="//d1u9biwaxjngwg.cloudfront.net/video-integration-showcase/peak-140.jpg"/>
       </div>

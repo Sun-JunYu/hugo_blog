@@ -221,7 +221,7 @@
     
     <div class="postShorten-header">
       <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="/hugo_blog/hugo_blog/2020/03/%E4%B8%89%E6%96%B9%E7%99%BB%E5%BD%95/">
+        <a class="link-unstyled" href="/hugo_blog/hugo_blog/2020/03/">
           三方登录
         </a>
       </h1>
@@ -253,13 +253,13 @@
 # 新浪微博回调 def wb_back(request): # 获取code code = request.GET.get('code') # 定义微博认证地址 data = { 'client_id': '297351690', 'client_secret': '8e24e86fd5dfa8d95675316bd969f9f1', 'grant_type': 'authorization_code', 'code': code, 'redirect_uri': 'http://127.0.0.1:8000/weibo_callback' } url = 'https://api.weibo.com/oauth2/access_token' res = requests.post(url, data=data).text res = json.loads(res) # return HttpResponse(res['uid']) # 获取新浪微博用户名 result = requests.get(url='https://api.weibo.com/2/users/show.json', params={'access_token': res['access_token'], 'uid': res['uid']}) result = json.loads(result.text) # print(result) # 判断该用户曾经是否登陆过 user = User.objects.filter(username=str(result['name'])).first() sina_id = '' user_id = '' if user: sina_id = user.
       
       <p>
-        <a href="/hugo_blog/hugo_blog/2020/03/%E4%B8%89%E6%96%B9%E7%99%BB%E5%BD%95/" class="postShorten-excerpt_link link">Continue reading</a>
+        <a href="/hugo_blog/hugo_blog/2020/03/" class="postShorten-excerpt_link link">Continue reading</a>
         
       </p>
     </div>
   </div>
   
-    <a href="/hugo_blog/hugo_blog/2020/03/%E4%B8%89%E6%96%B9%E7%99%BB%E5%BD%95/">
+    <a href="/hugo_blog/hugo_blog/2020/03/">
       <div class="postShorten-thumbnailimg">
         <img alt="" itemprop="image" src="//d1u9biwaxjngwg.cloudfront.net/video-integration-showcase/peak-140.jpg"/>
       </div>

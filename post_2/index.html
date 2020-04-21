@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Hugo 0.68.3 with theme Tranquilpeak 0.4.7-BETA">
+<meta name="author" content="孙军雨的技术博客">
+<meta name="keywords" content="">
+<meta name="description" content="关于数据结构 什么是数据结构？
+简单地说，数据结构是以某种特定的布局方式存储数据的容器。这种“布局方式”决定了数据结构对于某些操作是高效的，而对于其他操作则是低效的。首先我们需要理解各种数据结构，才能在处理实际问题时选取最合适的数据结构。
+为什么我们需要数据结构？
+数据是计算机科学当中最关键的实体，而数据结构则可以将数据以某种组织形式存储，因此，数据结构的价值不言而喻。
+无论你以何种方式解决何种问题，你都需要处理数据——无论是涉及员工薪水、股票价格、购物清单，还是只是简单的电话簿问题。
+数据需要根据不同的场景，按照特定的格式进行存储。有很多数据结构能够满足以不同格式存储数据的需求。
+常见的数据结构
+首先列出一些最常见的数据结构，我们将逐一说明：
+数组 栈 队列 链表 树 字典树（这是一种高效的树形结构，但值得单独说明） 散列表（哈希表）
+数组 数组是最简单、也是使用最广泛的数据结构。栈、队列等其他数据结构均由数组演变而来。下图是一个包含元素（1，2，3和4）的简单数组，数组长度为4。
+每个数据元素都关联一个正数值，我们称之为索引，它表明数组中每个元素所在的位置。大部分语言将初始索引定义为零。
+以下是数组的两种类型：
+一维数组（如上所示） 多维数组（数组的数组）
+数组的基本操作
+Insert——在指定索引位置插入一个元素 Get——返回指定索引位置的元素 Delete——删除指定索引位置的元素 Size——得到数组所有元素的数量
+面试中关于数组的常见问题
+寻找数组中第二小的元素 找到数组中第一个不重复出现的整数 合并两个有序数组 重新排列数组中的正值和负值
+栈 著名的撤销操作几乎遍布任意一个应用。但你有没有思考过它是如何工作的呢？这个问题的解决思路是按照将最后的状态排列在先的顺序，在内存中存储历史工作状态（当然，它会受限于一定的数量）。这没办法用数组实现。但有了栈，这就变得非常方便了。
+可以把栈想象成一列垂直堆放的书。为了拿到中间的书，你需要移除放置在这上面的所有书。这就是LIFO（后进先出）的工作原理。
+下图是包含三个数据元素（1，2和3）的栈，其中顶部的3将被最先移除：
+栈的基本操作
+Push——在顶部插入一个元素 Pop——返回并移除栈顶元素 isEmpty——如果栈为空，则返回true Top——返回顶部元素，但并不移除它
+面试中关于栈的常见问题
+使用栈计算后缀表达式 对栈的元素进行排序 判断表达式是否括号平衡
+应用场景：逆序输出，语法检查，进制转换
+在我们日常编程中，括号都是成对出现的，比如“()”“[]”“{}”“&lt;&gt;”这些成对出现的符号
+那么具体处理的方法就是:凡是遇到括号的前半部分，即把这个元素入栈，凡是遇到括号的后半部分就比对栈顶元素是否该元素相匹配，如果匹配，则前半部分出栈，否则就是匹配出错
+将十进制的数转换为2-9的任意进制的数
+我们都知道，通过求余法，可以将十进制数转换为其他进制，比如要转为八进制，将十进制数除以8，记录余数，然后继续将商除以8，一直到商等于0为止，最后将余数倒着写数来就可以了。
+比如100的八进制，100首先除以8商12余4,4首先进栈，然后12除以8商1余4，第二个余数4进栈，接着1除以8，商0余1，第三个余数1进栈，最后将三个余数出栈，就得到了100的八进制数144,
+队列 与栈相似，队列是另一种顺序存储元素的线性数据结构。栈与队列的最大差别在于栈是LIFO（后进先出），而队列是FIFO，即先进先出。
+一个完美的队列现实例子：售票亭排队队伍。如果有新人加入，他需要到队尾去排队，而非队首——排在前面的人会先拿到票，然后离开队伍。
+下图是包含四个元素（1，2，3和4）的队列，其中在顶部的1将被最先移除：
+移除先入队的元素、插入新元素
+队列的基本操作
+Enqueue()——在队列尾部插入元素 Dequeue()——移除队列头部的元素 isEmpty()——如果队列为空，则返回true Top()——返回队列的第一个元素
+面试中关于队列的常见问题
+使用队列表示栈 对队列的前k个元素倒序 使用队列生成从1到n的二进制数
+链表 链表是另一个重要的线性数据结构，乍一看可能有点像数组，但在内存分配、内部结构以及数据插入和删除的基本操作方面均有所不同。
+链表就像一个节点链，其中每个节点包含着数据和指向后续节点的指针。 链表还包含一个头指针，它指向链表的第一个元素，但当列表为空时，它指向null或无具体内容。
+链表一般用于实现文件系统、哈希表和邻接表。">
+
+
+<meta property="og:description" content="关于数据结构 什么是数据结构？
+简单地说，数据结构是以某种特定的布局方式存储数据的容器。这种“布局方式”决定了数据结构对于某些操作是高效的，而对于其他操作则是低效的。首先我们需要理解各种数据结构，才能在处理实际问题时选取最合适的数据结构。
+为什么我们需要数据结构？
+数据是计算机科学当中最关键的实体，而数据结构则可以将数据以某种组织形式存储，因此，数据结构的价值不言而喻。
+无论你以何种方式解决何种问题，你都需要处理数据——无论是涉及员工薪水、股票价格、购物清单，还是只是简单的电话簿问题。
+数据需要根据不同的场景，按照特定的格式进行存储。有很多数据结构能够满足以不同格式存储数据的需求。
+常见的数据结构
+首先列出一些最常见的数据结构，我们将逐一说明：
+数组 栈 队列 链表 树 字典树（这是一种高效的树形结构，但值得单独说明） 散列表（哈希表）
+数组 数组是最简单、也是使用最广泛的数据结构。栈、队列等其他数据结构均由数组演变而来。下图是一个包含元素（1，2，3和4）的简单数组，数组长度为4。
+每个数据元素都关联一个正数值，我们称之为索引，它表明数组中每个元素所在的位置。大部分语言将初始索引定义为零。
+以下是数组的两种类型：
+一维数组（如上所示） 多维数组（数组的数组）
+数组的基本操作
+Insert——在指定索引位置插入一个元素 Get——返回指定索引位置的元素 Delete——删除指定索引位置的元素 Size——得到数组所有元素的数量
+面试中关于数组的常见问题
+寻找数组中第二小的元素 找到数组中第一个不重复出现的整数 合并两个有序数组 重新排列数组中的正值和负值
+栈 著名的撤销操作几乎遍布任意一个应用。但你有没有思考过它是如何工作的呢？这个问题的解决思路是按照将最后的状态排列在先的顺序，在内存中存储历史工作状态（当然，它会受限于一定的数量）。这没办法用数组实现。但有了栈，这就变得非常方便了。
+可以把栈想象成一列垂直堆放的书。为了拿到中间的书，你需要移除放置在这上面的所有书。这就是LIFO（后进先出）的工作原理。
+下图是包含三个数据元素（1，2和3）的栈，其中顶部的3将被最先移除：
+栈的基本操作
+Push——在顶部插入一个元素 Pop——返回并移除栈顶元素 isEmpty——如果栈为空，则返回true Top——返回顶部元素，但并不移除它
+面试中关于栈的常见问题
+使用栈计算后缀表达式 对栈的元素进行排序 判断表达式是否括号平衡
+应用场景：逆序输出，语法检查，进制转换
+在我们日常编程中，括号都是成对出现的，比如“()”“[]”“{}”“&lt;&gt;”这些成对出现的符号
+那么具体处理的方法就是:凡是遇到括号的前半部分，即把这个元素入栈，凡是遇到括号的后半部分就比对栈顶元素是否该元素相匹配，如果匹配，则前半部分出栈，否则就是匹配出错
+将十进制的数转换为2-9的任意进制的数
+我们都知道，通过求余法，可以将十进制数转换为其他进制，比如要转为八进制，将十进制数除以8，记录余数，然后继续将商除以8，一直到商等于0为止，最后将余数倒着写数来就可以了。
+比如100的八进制，100首先除以8商12余4,4首先进栈，然后12除以8商1余4，第二个余数4进栈，接着1除以8，商0余1，第三个余数1进栈，最后将三个余数出栈，就得到了100的八进制数144,
+队列 与栈相似，队列是另一种顺序存储元素的线性数据结构。栈与队列的最大差别在于栈是LIFO（后进先出），而队列是FIFO，即先进先出。
+一个完美的队列现实例子：售票亭排队队伍。如果有新人加入，他需要到队尾去排队，而非队首——排在前面的人会先拿到票，然后离开队伍。
+下图是包含四个元素（1，2，3和4）的队列，其中在顶部的1将被最先移除：
+移除先入队的元素、插入新元素
+队列的基本操作
+Enqueue()——在队列尾部插入元素 Dequeue()——移除队列头部的元素 isEmpty()——如果队列为空，则返回true Top()——返回队列的第一个元素
+面试中关于队列的常见问题
+使用队列表示栈 对队列的前k个元素倒序 使用队列生成从1到n的二进制数
+链表 链表是另一个重要的线性数据结构，乍一看可能有点像数组，但在内存分配、内部结构以及数据插入和删除的基本操作方面均有所不同。
+链表就像一个节点链，其中每个节点包含着数据和指向后续节点的指针。 链表还包含一个头指针，它指向链表的第一个元素，但当列表为空时，它指向null或无具体内容。
+链表一般用于实现文件系统、哈希表和邻接表。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="python的数据结构">
+<meta name="twitter:title" content="python的数据结构">
+<meta property="og:url" content="/hugo_blog/post_2/">
+<meta property="twitter:url" content="/hugo_blog/post_2/">
+<meta property="og:site_name" content="孙军雨的技术博客">
+<meta property="og:description" content="关于数据结构 什么是数据结构？
+简单地说，数据结构是以某种特定的布局方式存储数据的容器。这种“布局方式”决定了数据结构对于某些操作是高效的，而对于其他操作则是低效的。首先我们需要理解各种数据结构，才能在处理实际问题时选取最合适的数据结构。
+为什么我们需要数据结构？
+数据是计算机科学当中最关键的实体，而数据结构则可以将数据以某种组织形式存储，因此，数据结构的价值不言而喻。
+无论你以何种方式解决何种问题，你都需要处理数据——无论是涉及员工薪水、股票价格、购物清单，还是只是简单的电话簿问题。
+数据需要根据不同的场景，按照特定的格式进行存储。有很多数据结构能够满足以不同格式存储数据的需求。
+常见的数据结构
+首先列出一些最常见的数据结构，我们将逐一说明：
+数组 栈 队列 链表 树 字典树（这是一种高效的树形结构，但值得单独说明） 散列表（哈希表）
+数组 数组是最简单、也是使用最广泛的数据结构。栈、队列等其他数据结构均由数组演变而来。下图是一个包含元素（1，2，3和4）的简单数组，数组长度为4。
+每个数据元素都关联一个正数值，我们称之为索引，它表明数组中每个元素所在的位置。大部分语言将初始索引定义为零。
+以下是数组的两种类型：
+一维数组（如上所示） 多维数组（数组的数组）
+数组的基本操作
+Insert——在指定索引位置插入一个元素 Get——返回指定索引位置的元素 Delete——删除指定索引位置的元素 Size——得到数组所有元素的数量
+面试中关于数组的常见问题
+寻找数组中第二小的元素 找到数组中第一个不重复出现的整数 合并两个有序数组 重新排列数组中的正值和负值
+栈 著名的撤销操作几乎遍布任意一个应用。但你有没有思考过它是如何工作的呢？这个问题的解决思路是按照将最后的状态排列在先的顺序，在内存中存储历史工作状态（当然，它会受限于一定的数量）。这没办法用数组实现。但有了栈，这就变得非常方便了。
+可以把栈想象成一列垂直堆放的书。为了拿到中间的书，你需要移除放置在这上面的所有书。这就是LIFO（后进先出）的工作原理。
+下图是包含三个数据元素（1，2和3）的栈，其中顶部的3将被最先移除：
+栈的基本操作
+Push——在顶部插入一个元素 Pop——返回并移除栈顶元素 isEmpty——如果栈为空，则返回true Top——返回顶部元素，但并不移除它
+面试中关于栈的常见问题
+使用栈计算后缀表达式 对栈的元素进行排序 判断表达式是否括号平衡
+应用场景：逆序输出，语法检查，进制转换
+在我们日常编程中，括号都是成对出现的，比如“()”“[]”“{}”“&lt;&gt;”这些成对出现的符号
+那么具体处理的方法就是:凡是遇到括号的前半部分，即把这个元素入栈，凡是遇到括号的后半部分就比对栈顶元素是否该元素相匹配，如果匹配，则前半部分出栈，否则就是匹配出错
+将十进制的数转换为2-9的任意进制的数
+我们都知道，通过求余法，可以将十进制数转换为其他进制，比如要转为八进制，将十进制数除以8，记录余数，然后继续将商除以8，一直到商等于0为止，最后将余数倒着写数来就可以了。
+比如100的八进制，100首先除以8商12余4,4首先进栈，然后12除以8商1余4，第二个余数4进栈，接着1除以8，商0余1，第三个余数1进栈，最后将三个余数出栈，就得到了100的八进制数144,
+队列 与栈相似，队列是另一种顺序存储元素的线性数据结构。栈与队列的最大差别在于栈是LIFO（后进先出），而队列是FIFO，即先进先出。
+一个完美的队列现实例子：售票亭排队队伍。如果有新人加入，他需要到队尾去排队，而非队首——排在前面的人会先拿到票，然后离开队伍。
+下图是包含四个元素（1，2，3和4）的队列，其中在顶部的1将被最先移除：
+移除先入队的元素、插入新元素
+队列的基本操作
+Enqueue()——在队列尾部插入元素 Dequeue()——移除队列头部的元素 isEmpty()——如果队列为空，则返回true Top()——返回队列的第一个元素
+面试中关于队列的常见问题
+使用队列表示栈 对队列的前k个元素倒序 使用队列生成从1到n的二进制数
+链表 链表是另一个重要的线性数据结构，乍一看可能有点像数组，但在内存分配、内部结构以及数据插入和删除的基本操作方面均有所不同。
+链表就像一个节点链，其中每个节点包含着数据和指向后续节点的指针。 链表还包含一个头指针，它指向链表的第一个元素，但当列表为空时，它指向null或无具体内容。
+链表一般用于实现文件系统、哈希表和邻接表。">
+<meta name="twitter:description" content="关于数据结构 什么是数据结构？
+简单地说，数据结构是以某种特定的布局方式存储数据的容器。这种“布局方式”决定了数据结构对于某些操作是高效的，而对于其他操作则是低效的。首先我们需要理解各种数据结构，才能在处理实际问题时选取最合适的数据结构。
+为什么我们需要数据结构？
+数据是计算机科学当中最关键的实体，而数据结构则可以将数据以某种组织形式存储，因此，数据结构的价值不言而喻。
+无论你以何种方式解决何种问题，你都需要处理数据——无论是涉及员工薪水、股票价格、购物清单，还是只是简单的电话簿问题。
+数据需要根据不同的场景，按照特定的格式进行存储。有很多数据结构能够满足以不同格式存储数据的需求。
+常见的数据结构
+首先列出一些最常见的数据结构，我们将逐一说明：
+数组 栈 队列 链表 树 字典树（这是一种高效的树形结构，但值得单独说明） 散列表（哈希表）
+数组 数组是最简单、也是使用最广泛的数据结构。栈、队列等其他数据结构均由数组演变而来。下图是一个包含元素（1，2，3和4）的简单数组，数组长度为4。
+每个数据元素都关联一个正数值，我们称之为索引，它表明数组中每个元素所在的位置。大部分语言将初始索引定义为零。
+以下是数组的两种类型：
+一维数组（如上所示） 多维数组（数组的数组）
+数组的基本操作
+Insert——在指定索引位置插入一个元素 Get——返回指定索引位置的元素 Delete——删除指定索引位置的元素 Size——得到数组所有元素的数量
+面试中关于数组的常见问题
+寻找数组中第二小的元素 找到数组中第一个不重复出现的整数 合并两个有序数组 重新排列数组中的正值和负值
+栈 著名的撤销操作几乎遍布任意一个应用。但你有没有思考过它是如何工作的呢？这个问题的解决思路是按照将最后的状态排列在先的顺序，在内存中存储历史工作状态（当然，它会受限于一定的数量）。这没办法用数组实现。但有了栈，这就变得非常方便了。
+可以把栈想象成一列垂直堆放的书。为了拿到中间的书，你需要移除放置在这上面的所有书。这就是LIFO（后进先出）的工作原理。
+下图是包含三个数据元素（1，2和3）的栈，其中顶部的3将被最先移除：
+栈的基本操作
+Push——在顶部插入一个元素 Pop——返回并移除栈顶元素 isEmpty——如果栈为空，则返回true Top——返回顶部元素，但并不移除它
+面试中关于栈的常见问题
+使用栈计算后缀表达式 对栈的元素进行排序 判断表达式是否括号平衡
+应用场景：逆序输出，语法检查，进制转换
+在我们日常编程中，括号都是成对出现的，比如“()”“[]”“{}”“&lt;&gt;”这些成对出现的符号
+那么具体处理的方法就是:凡是遇到括号的前半部分，即把这个元素入栈，凡是遇到括号的后半部分就比对栈顶元素是否该元素相匹配，如果匹配，则前半部分出栈，否则就是匹配出错
+将十进制的数转换为2-9的任意进制的数
+我们都知道，通过求余法，可以将十进制数转换为其他进制，比如要转为八进制，将十进制数除以8，记录余数，然后继续将商除以8，一直到商等于0为止，最后将余数倒着写数来就可以了。
+比如100的八进制，100首先除以8商12余4,4首先进栈，然后12除以8商1余4，第二个余数4进栈，接着1除以8，商0余1，第三个余数1进栈，最后将三个余数出栈，就得到了100的八进制数144,
+队列 与栈相似，队列是另一种顺序存储元素的线性数据结构。栈与队列的最大差别在于栈是LIFO（后进先出），而队列是FIFO，即先进先出。
+一个完美的队列现实例子：售票亭排队队伍。如果有新人加入，他需要到队尾去排队，而非队首——排在前面的人会先拿到票，然后离开队伍。
+下图是包含四个元素（1，2，3和4）的队列，其中在顶部的1将被最先移除：
+移除先入队的元素、插入新元素
+队列的基本操作
+Enqueue()——在队列尾部插入元素 Dequeue()——移除队列头部的元素 isEmpty()——如果队列为空，则返回true Top()——返回队列的第一个元素
+面试中关于队列的常见问题
+使用队列表示栈 对队列的前k个元素倒序 使用队列生成从1到n的二进制数
+链表 链表是另一个重要的线性数据结构，乍一看可能有点像数组，但在内存分配、内部结构以及数据插入和删除的基本操作方面均有所不同。
+链表就像一个节点链，其中每个节点包含着数据和指向后续节点的指针。 链表还包含一个头指针，它指向链表的第一个元素，但当列表为空时，它指向null或无具体内容。
+链表一般用于实现文件系统、哈希表和邻接表。">
+<meta property="og:locale" content="en-us">
+
+  
+  
+  
+  
+    
+      <meta property="article:section" content="python">
+    
+  
+  
+    
+      <meta property="article:tag" content="python基础">
+    
+  
+
+
+<meta name="twitter:card" content="summary">
+
+
+
+
+
+
+
+  <meta property="og:image" content="//d1u9biwaxjngwg.cloudfront.net/video-integration-showcase/peak-140.jpg">
+  <meta property="twitter:image" content="//d1u9biwaxjngwg.cloudfront.net/video-integration-showcase/peak-140.jpg">
+
+
+
+
+
+  <meta property="og:image" content="http://q92ekyelb.bkt.clouddn.com/authon.jpg">
+  <meta property="twitter:image" content="http://q92ekyelb.bkt.clouddn.com/authon.jpg">
+
+
+    <title>python的数据结构</title>
+
+    <link rel="icon" href="/hugo_blog/favicon.png">
+    
+
+    
+
+    <link rel="canonical" href="/hugo_blog/hugo_blog/post_2/">
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.min.css" integrity="sha256-vuXZ9LGmmwtjqFX1F+EKin1ThZMub58gKULUyf0qECk=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" integrity="sha256-SEa4XYAHihTcEP1f5gARTB2K26Uk8PsndQYHQC1f4jU=" crossorigin="anonymous" />
+    
+    
+    <link rel="stylesheet" href="/hugo_blog/css/style-twzjdbqhmnnacqs0pwwdzcdbt8yhv8giawvjqjmyfoqnvazl0dalmnhdkvp7.min.css" />
+    
+    
+
+    
+      
+    
+    
+  </head>
+
+  <body>
+    <div id="blog">
+      <header id="header" data-behavior="1">
+  <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+  <div class="header-title">
+    <a class="header-title-link" href="/hugo_blog/">孙军雨的技术博客</a>
+  </div>
+  
+    
+      <a class="header-right-picture "
+         href="/hugo_blog/#about">
+    
+    
+    
+      
+        <img class="header-picture" src="http://q92ekyelb.bkt.clouddn.com/authon.jpg" alt="Author&#39;s picture" />
+      
+    
+    </a>
+  
+</header>
+
+      <nav id="sidebar" data-behavior="1">
+  <div class="sidebar-container">
+    
+      <div class="sidebar-profile">
+        <a href="/hugo_blog/#about">
+          <img class="sidebar-profile-picture" src="http://q92ekyelb.bkt.clouddn.com/authon.jpg" alt="Author&#39;s picture" />
+        </a>
+        <h4 class="sidebar-profile-name">孙军雨的技术博客</h4>
+        
+          <h5 class="sidebar-profile-bio">python全栈开发</h5>
+        
+      </div>
+    
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="/hugo_blog/">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+      
+      <span class="sidebar-button-desc">Home</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="/hugo_blog/categories">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+      
+      <span class="sidebar-button-desc">Categories</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="/hugo_blog/tags">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+      
+      <span class="sidebar-button-desc">Tags</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="/hugo_blog/archives">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+      
+      <span class="sidebar-button-desc">Archives</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="/hugo_blog/#about">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+      
+      <span class="sidebar-button-desc">About</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://github.com/Sun-JunYu" target="_blank" rel="noopener">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-github"></i>
+      
+      <span class="sidebar-button-desc">Gitee</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://zhuanlan.zhihu.com/c_1233123904211673088" target="_blank" rel="noopener">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-zhihu"></i>
+      
+      <span class="sidebar-button-desc">zhihu</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://weibo.com/5814038760/profile?rightmod=1&amp;wvr=6&amp;mod=personnumber&amp;is_all=1" target="_blank" rel="noopener">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-weibo"></i>
+      
+      <span class="sidebar-button-desc">weibo</span>
+    </a>
+  </li>
+
+
+    </ul>
+  </div>
+</nav>
+
+      
+
+      <div id="main" data-behavior="1"
+        class="
+               hasCoverMetaIn
+               ">
+        <article class="post" itemscope itemType="http://schema.org/BlogPosting">
+          
+          
+            <div class="post-header main-content-wrap text-left">
+  
+    <h1 class="post-title" itemprop="headline">
+      python的数据结构
+    </h1>
+  
+  
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="0001-01-01T00:00:00Z">
+        
+  January 1, 1
+
+      </time>
+    
+    
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="/hugo_blog/categories/python">python</a>
+    
+  
+
+  </div>
+
+</div>
+          
+          <div class="post-content markdown" itemprop="articleBody">
+            <div class="main-content-wrap">
+              <h1 id="关于数据结构">关于数据结构</h1>
+<p>什么是数据结构？</p>
+<p>简单地说，数据结构是以某种特定的布局方式存储数据的容器。这种“布局方式”决定了数据结构对于某些操作是高效的，而对于其他操作则是低效的。首先我们需要理解各种数据结构，才能在处理实际问题时选取最合适的数据结构。</p>
+<p>为什么我们需要数据结构？</p>
+<p>数据是计算机科学当中最关键的实体，而数据结构则可以将数据以某种组织形式存储，因此，数据结构的价值不言而喻。</p>
+<p>无论你以何种方式解决何种问题，你都需要处理数据——无论是涉及员工薪水、股票价格、购物清单，还是只是简单的电话簿问题。</p>
+<p>数据需要根据不同的场景，按照特定的格式进行存储。有很多数据结构能够满足以不同格式存储数据的需求。</p>
+<p>常见的数据结构</p>
+<p>首先列出一些最常见的数据结构，我们将逐一说明：</p>
+<p>数组 栈 队列 链表 树 字典树（这是一种高效的树形结构，但值得单独说明） 散列表（哈希表）</p>
+<h3 id="数组">数组</h3>
+<p>数组是最简单、也是使用最广泛的数据结构。栈、队列等其他数据结构均由数组演变而来。下图是一个包含元素（1，2，3和4）的简单数组，数组长度为4。</p>
+<p>每个数据元素都关联一个正数值，我们称之为索引，它表明数组中每个元素所在的位置。大部分语言将初始索引定义为零。</p>
+<p>以下是数组的两种类型：</p>
+<p>一维数组（如上所示） 多维数组（数组的数组）</p>
+<p>数组的基本操作</p>
+<p>Insert——在指定索引位置插入一个元素 Get——返回指定索引位置的元素 Delete——删除指定索引位置的元素 Size——得到数组所有元素的数量</p>
+<p>面试中关于数组的常见问题</p>
+<p>寻找数组中第二小的元素 找到数组中第一个不重复出现的整数 合并两个有序数组 重新排列数组中的正值和负值</p>
+<h3 id="栈">栈</h3>
+<p>著名的撤销操作几乎遍布任意一个应用。但你有没有思考过它是如何工作的呢？这个问题的解决思路是按照将最后的状态排列在先的顺序，在内存中存储历史工作状态（当然，它会受限于一定的数量）。这没办法用数组实现。但有了栈，这就变得非常方便了。</p>
+<p>可以把栈想象成一列垂直堆放的书。为了拿到中间的书，你需要移除放置在这上面的所有书。这就是LIFO（后进先出）的工作原理。</p>
+<p>下图是包含三个数据元素（1，2和3）的栈，其中顶部的3将被最先移除：</p>
+<p>栈的基本操作</p>
+<p>Push——在顶部插入一个元素 Pop——返回并移除栈顶元素 isEmpty——如果栈为空，则返回true Top——返回顶部元素，但并不移除它</p>
+<p>面试中关于栈的常见问题</p>
+<p>使用栈计算后缀表达式 对栈的元素进行排序 判断表达式是否括号平衡</p>
+<p>应用场景：逆序输出，语法检查，进制转换</p>
+<p>在我们日常编程中，括号都是成对出现的，比如“()”“[]”“{}”“&lt;&gt;”这些成对出现的符号</p>
+<p>那么具体处理的方法就是:凡是遇到括号的前半部分，即把这个元素入栈，凡是遇到括号的后半部分就比对栈顶元素是否该元素相匹配，如果匹配，则前半部分出栈，否则就是匹配出错</p>
+<p>将十进制的数转换为2-9的任意进制的数</p>
+<p>我们都知道，通过求余法，可以将十进制数转换为其他进制，比如要转为八进制，将十进制数除以8，记录余数，然后继续将商除以8，一直到商等于0为止，最后将余数倒着写数来就可以了。</p>
+<p>比如100的八进制，100首先除以8商12余4,4首先进栈，然后12除以8商1余4，第二个余数4进栈，接着1除以8，商0余1，第三个余数1进栈，最后将三个余数出栈，就得到了100的八进制数144,</p>
+<h3 id="队列">队列</h3>
+<p>与栈相似，队列是另一种顺序存储元素的线性数据结构。栈与队列的最大差别在于栈是LIFO（后进先出），而队列是FIFO，即先进先出。</p>
+<p>一个完美的队列现实例子：售票亭排队队伍。如果有新人加入，他需要到队尾去排队，而非队首——排在前面的人会先拿到票，然后离开队伍。</p>
+<p>下图是包含四个元素（1，2，3和4）的队列，其中在顶部的1将被最先移除：</p>
+<p>移除先入队的元素、插入新元素</p>
+<p>队列的基本操作</p>
+<p>Enqueue()——在队列尾部插入元素 Dequeue()——移除队列头部的元素 isEmpty()——如果队列为空，则返回true Top()——返回队列的第一个元素</p>
+<p>面试中关于队列的常见问题</p>
+<p>使用队列表示栈 对队列的前k个元素倒序 使用队列生成从1到n的二进制数</p>
+<h3 id="链表">链表</h3>
+<p>链表是另一个重要的线性数据结构，乍一看可能有点像数组，但在内存分配、内部结构以及数据插入和删除的基本操作方面均有所不同。</p>
+<p>链表就像一个节点链，其中每个节点包含着数据和指向后续节点的指针。 链表还包含一个头指针，它指向链表的第一个元素，但当列表为空时，它指向null或无具体内容。</p>
+<p>链表一般用于实现文件系统、哈希表和邻接表。</p>
+<p>这是链表内部结构的展示：</p>
+<p>链表包括以下类型：</p>
+<p>单链表（单向） 双向链表（双向）</p>
+<p>链表的基本操作：</p>
+<p>InsertAtEnd - 在链表的末尾插入指定元素 InsertAtHead - 在链接列表的开头/头部插入指定元素 Delete - 从链接列表中删除指定元素 DeleteAtHead - 删除链接列表的第一个元素 Search - 从链表中返回指定元素 isEmpty - 如果链表为空，则返回true</p>
+<p>面试中关于链表的常见问题</p>
+<p>反转链表 检测链表中的循环 返回链表倒数第N个节点 删除链表中的重复项</p>
+<h3 id="树">树</h3>
+<p>树形结构是一种层级式的数据结构，由顶点（节点）和连接它们的边组成。 树类似于图，但区分树和图的重要特征是树中不存在环路。</p>
+<p>树形结构被广泛应用于人工智能和复杂算法，它可以提供解决问题的有效存储机制。</p>
+<p>这是一个简单树的示意图，以及树数据结构中使用的基本术语：</p>
+<p>Root - 根节点</p>
+<p>Parent - 父节点</p>
+<p>Child - 子节点</p>
+<p>Leaf - 叶子节点</p>
+<p>Sibling - 兄弟节点</p>
+<p>以下是树形结构的主要类型：</p>
+<p>N元树 平衡树 二叉树 二叉搜索树 AVL树 红黑树 2-3树</p>
+<p>其中，二叉树和二叉搜索树是最常用的树。</p>
+<p>面试中关于树结构的常见问题：</p>
+<p>求二叉树的高度 在二叉搜索树中查找第k个最大值 查找与根节点距离k的节点 在二叉树中查找给定节点的祖先节点</p>
+<p>字典树（Trie）</p>
+<p>字典树，也称为“前缀树”，是一种特殊的树状数据结构，对于解决字符串相关问题非常有效。它能够提供快速检索，主要用于搜索字典中的单词，在搜索引擎中自动提供建议，甚至被用于IP的路由。</p>
+<p>这些单词以顶部到底部的方式存储，其中绿色节点“p”，“s”和“r”分别表示“top”，“thus”和“theirs”的底部。</p>
+<p>面试中关于字典树的常见问题</p>
+<p>计算字典树中的总单词数 打印存储在字典树中的所有单词 使用字典树对数组的元素进行排序 使用字典树从字典中形成单词 构建T9字典（字典树+ DFS ）</p>
+
+              
+            </div>
+          </div>
+          <div id="post-footer" class="post-footer main-content-wrap">
+            
+              
+                
+                
+                  <div class="post-footer-tags">
+                    <span class="text-color-light text-small">TAGGED IN</span><br/>
+                    
+  <a class="tag tag--primary tag--small" href="/hugo_blog/tags/python%E5%9F%BA%E7%A1%80/">python基础</a>
+
+                  </div>
+                
+              
+            
+            <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="/hugo_blog/who-is-using-tranquilpeak-hugo-theme/" data-tooltip="欢迎来到孙军雨的技术博客">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--disabled">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=/hugo_blog/post_2/">
+              <i class="fa fa-facebook-official"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=/hugo_blog/post_2/">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=/hugo_blog/post_2/">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+            
+              
+                <div id="disqus_thread">
+  <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+              
+            
+          </div>
+        </article>
+        <footer id="footer" class="main-content-wrap">
+  <span class="copyrights">
+    &copy; 2020 孙军雨的技术博客. All Rights Reserved
+  </span>
+</footer>
+
+      </div>
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="1">
+        <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="/hugo_blog/who-is-using-tranquilpeak-hugo-theme/" data-tooltip="欢迎来到孙军雨的技术博客">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--disabled">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=/hugo_blog/post_2/">
+              <i class="fa fa-facebook-official"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=/hugo_blog/post_2/">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=/hugo_blog/post_2/">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+      </div>
+      <div id="share-options-bar" class="share-options-bar" data-behavior="1">
+  <i id="btn-close-shareoptions" class="fa fa-close"></i>
+  <ul class="share-options">
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=%2Fhugo_blog%2Fpost_2%2F">
+          <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=%2Fhugo_blog%2Fpost_2%2F">
+          <i class="fa fa-twitter"></i><span>Share on Twitter</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=%2Fhugo_blog%2Fpost_2%2F">
+          <i class="fa fa-google-plus"></i><span>Share on Google&#43;</span>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+    </div>
+    
+    <div id="about">
+  <div id="about-card">
+    <div id="about-btn-close">
+      <i class="fa fa-remove"></i>
+    </div>
+    
+      <img id="about-card-picture" src="http://q92ekyelb.bkt.clouddn.com/authon.jpg" alt="Author&#39;s picture" />
+    
+    <h4 id="about-card-name">孙军雨的技术博客</h4>
+    
+      <div id="about-card-bio">python全栈开发</div>
+    
+    
+      <div id="about-card-job">
+        <i class="fa fa-briefcase"></i>
+        <br/>
+        开发人员
+      </div>
+    
+    
+      <div id="about-card-location">
+        <i class="fa fa-map-marker"></i>
+        <br/>
+        China
+      </div>
+    
+  </div>
+</div>
+
+    
+
+    
+  
+    
+      <div id="cover" style="background-image:url('/hugo_blog/images/cover.jpg');"></div>
+    
+  
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.7/js/jquery.fancybox.min.js" integrity="sha256-GEAnjcTqVP+vBp3SSc8bEDQqvWAZMiHyUSIorrWwH50=" crossorigin="anonymous"></script>
+
+
+<script src="/hugo_blog/js/script-pcw6v3xilnxydl1vddzazdverrnn9ctynvnxgwho987mfyqkuylcb1nlt.min.js"></script>
+
+
+<script lang="javascript">
+window.onload = updateMinWidth;
+window.onresize = updateMinWidth;
+document.getElementById("sidebar").addEventListener("transitionend", updateMinWidth);
+function updateMinWidth() {
+  var sidebar = document.getElementById("sidebar");
+  var main = document.getElementById("main");
+  main.style.minWidth = "";
+  var w1 = getComputedStyle(main).getPropertyValue("min-width");
+  var w2 = getComputedStyle(sidebar).getPropertyValue("width");
+  var w3 = getComputedStyle(sidebar).getPropertyValue("left");
+  main.style.minWidth = `calc(${w1} - ${w2} - ${w3})`;
+}
+</script>
+
+<script>
+$(document).ready(function() {
+  hljs.configure({ classPrefix: '', useBR: false });
+  $('pre.code-highlight > code, pre > code').each(function(i, block) {
+    if (!$(this).hasClass('codeblock')) {
+      $(this).addClass('codeblock');
+    }
+    hljs.highlightBlock(block);
+  });
+});
+</script>
+
+
+  
+    
+      <script>
+        var disqus_config = function () {
+          this.page.url = '\/hugo_blog\/post_2\/';
+          
+            this.page.identifier = '\/post_2\/'
+          
+        };
+        (function() {
+          
+          
+          if (window.location.hostname == "localhost") {
+            return;
+          }
+          var d = document, s = d.createElement('script');
+          var disqus_shortname = 'python全栈工程师';
+          s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+        })();
+      </script>
+    
+  
+
+
+
+
+    
+  </body>
+</html>
+
